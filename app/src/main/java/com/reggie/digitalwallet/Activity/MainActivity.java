@@ -29,7 +29,9 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        ImmersionBar.with(this).init();
+        ImmersionBar.with(this)
+                .statusBarDarkFont(true)//状态栏字体是深色，不写默认为亮色
+                .init();
 
         //初始化View
         initView();
