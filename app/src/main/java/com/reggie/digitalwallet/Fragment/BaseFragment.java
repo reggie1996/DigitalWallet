@@ -1,4 +1,4 @@
-package com.reggie.digitalwallet;
+package com.reggie.digitalwallet.Fragment;
 
 import android.content.Context;
 import android.os.Bundle;
@@ -26,17 +26,16 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment{
         return initView();
     }
 
-    protected abstract View initView();
-
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         initData();
     }
-/*
-当子类需要初始化数据，或者联网请求绑定数据，展示数据
- */
-    protected void initData(){
 
-    }
+
+    protected abstract View initView();
+    /*
+    当子类需要初始化数据，或者联网请求绑定数据，展示数据
+     */
+    protected abstract void initData();
 }
