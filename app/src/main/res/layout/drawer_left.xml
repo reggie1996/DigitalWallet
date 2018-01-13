@@ -19,102 +19,231 @@
             android:layout_width="match_parent"
             android:layout_height="180dp">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginStart="50dp"
-                android:gravity="center_vertical"
-                android:orientation="vertical">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/profile_image"
-                    android:layout_width="60dp"
-                    android:layout_height="60dp"
-
-                    android:src="@mipmap/ic_launcher"
-                    app:civ_border_color="@color/colorPrimary"
-                    app:civ_border_width="2dp" />
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="gyf-dev"
-                    android:textColor="@android:color/white"
-                    android:textSize="20sp" />
-            </LinearLayout>
 
             <ImageView
                 android:id="@+id/iv_bg"
                 android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/personbackground" />
+                android:layout_height="wrap_content"
+                android:scaleType="fitXY"
+                android:src="@mipmap/personbackground"/>
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_gravity="center"
+                    android:id="@+id/profile_image"
+                    android:layout_width="90dp"
+                    android:layout_height="90dp"
+                    android:src="@mipmap/profile_image"
+                    app:civ_border_color="@color/colorGold3"
+                    app:civ_border_width="1dp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nakamoto"
+                    android:textColor="@color/colorGold1"
+                    android:textSize="20dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_qrcode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@mipmap/ic_qrcode"
+                android:layout_gravity="bottom|center"
+                android:layout_marginBottom="8dp"/>
 
         </FrameLayout>
 
-        <LinearLayout
-            android:id="@+id/ll_github"
+        <Space
             android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:clickable="true"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+            android:layout_height="5dp" />
+
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scrollbars="none">
+
 
             <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center">
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@mipmap/ic_launcher" />
-            </LinearLayout>
-
-
-            <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="github"
-                android:textColor="@android:color/black"
-                android:textSize="15sp" />
-        </LinearLayout>
+                android:orientation="vertical">
 
-        <LinearLayout
-            android:id="@+id/ll_jianshu"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:gravity="center_vertical"
-            android:orientation="horizontal">
+                <LinearLayout
+                    android:id="@+id/ll_menu_import_wallet"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="导入钱包"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="100dp"
-                android:layout_height="match_parent"
-                android:gravity="center">
+                <LinearLayout
+                    android:id="@+id/ll_menu_create_wallet"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="创建钱包"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
 
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="20dp"
-                    android:src="@mipmap/ic_launcher" />
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_wallet_manage"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="钱包管理"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+
+                <View  android:layout_height="0.1dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorGold1"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_personal_fortune"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="个人资产"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+                <View  android:layout_height="0.1dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorGold1"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_message_center"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="消息中心"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_contacts"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="联系人"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_customer_service"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="智能客服"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_help"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="帮助"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+                <View  android:layout_height="0.1dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorGold1"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_account_manage"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="账号管理"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_system_manage"
+                    style="@style/draw_menu_item_style">
+                    <ImageView
+                        style="@style/draw_menu_icon_style"
+                        android:src="@mipmap/ic_community" />
+                    <TextView
+                        android:text="系统设置"
+                        style="@style/draw_menu_text_style" />
+                </LinearLayout>
+
+                <View  android:layout_height="0.1dp"
+                    android:layout_width="match_parent"
+                    android:background="@color/colorGold1"
+                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"/>
+
+                <LinearLayout
+                    android:id="@+id/ll_menu_exit"
+                    style="@style/draw_menu_item_style"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView
+                        android:text="退出"
+                        android:textColor="#AE0000"
+                        style="@style/draw_menu_text_style" />
+                    <Space
+                        android:layout_width="match_parent"
+                        android:layout_height="10dp" />
+
+                </LinearLayout>
+
             </LinearLayout>
+        </ScrollView>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="简书"
-                android:textColor="@android:color/black"
-                android:textSize="15sp" />
-        </LinearLayout>
     </LinearLayout>
-
-    <TextView
-        android:id="@+id/tv_version"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="20dp"
-        android:text="当前版本：2.3.0" />
 </LinearLayout>

@@ -31,4 +31,29 @@
         <item name="android:layout_weight">1</item>
     </style>
 
+    <!-- 侧滑菜单一个item的-->
+    <style name="draw_menu_item_style">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:clickable">true</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <!-- 侧滑菜单每一个item的字体-->
+    <style name="draw_menu_text_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <!-- 侧滑菜单每一个item的图标-->
+    <style name="draw_menu_icon_style">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:layout_marginEnd">10dp</item>
+    </style>
+
+
 </resources>

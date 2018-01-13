@@ -1,11 +1,17 @@
 package com.reggie.digitalwallet.Activity;
 
+import android.os.Bundle;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
-import android.os.Bundle;
 import android.support.v4.widget.DrawerLayout;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RadioGroup;
+import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.Fragment.BaseFragment;
 import com.reggie.digitalwallet.Fragment.CommunityFragment;
@@ -17,18 +23,56 @@ import com.reggie.digitalwallet.R;
 import java.util.ArrayList;
 import java.util.List;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
+import butterknife.OnClick;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
+
 public class MainActivity extends FragmentActivity {
 
-    DrawerLayout drawer;
+
+    @BindView(R.id.iv_bg)
+    ImageView mIvBg;
+    @BindView(R.id.iv_qrcode)
+    ImageView iv_qrcode;
+    @BindView(R.id.ll_menu_import_wallet)
+    LinearLayout ll_menu_import_wallet;
+    @BindView(R.id.ll_menu_create_wallet)
+    LinearLayout ll_menu_create_wallet;
+    @BindView(R.id.ll_menu_wallet_manage)
+    LinearLayout ll_menu_wallet_manage;
+    @BindView(R.id.ll_menu_personal_fortune)
+    LinearLayout ll_menu_personal_fortune;
+    @BindView(R.id.ll_menu_message_center)
+    LinearLayout ll_menu_message_center;
+    @BindView(R.id.ll_menu_contacts)
+    LinearLayout ll_menu_contacts;
+    @BindView(R.id.ll_menu_customer_service)
+    LinearLayout ll_menu_customer_service;
+    @BindView(R.id.ll_menu_help)
+    LinearLayout ll_menu_help;
+    @BindView(R.id.ll_menu_account_manage)
+    LinearLayout ll_menu_account_manage;
+    @BindView(R.id.ll_menu_system_manage)
+    LinearLayout ll_menu_system_manage;
+    @BindView(R.id.ll_menu_exit)
+    LinearLayout ll_menu_exit;
+
     private RadioGroup radioGroup;
     private List<BaseFragment> mBaseFragments;
     private int position;
-    private android.support.v4.app.Fragment mContent;
+    private Fragment mContent;
+
+    DrawerLayout drawer;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ButterKnife.bind(this);
 
         //状态栏修改
         ImmersionBar.with(this)
@@ -41,6 +85,7 @@ public class MainActivity extends FragmentActivity {
         initFragment();
         //设置RadioGroup的监听
         setListener();
+        initDrawer();
 
     }
 
@@ -50,17 +95,21 @@ public class MainActivity extends FragmentActivity {
         ImmersionBar.with(this).destroy(); //必须调用该方法，防止内存泄漏
     }
 
-    private void initView(){
+    private void initView() {
         drawer = findViewById(R.id.drawer);
         radioGroup = findViewById(R.id.rg_bottom_tag);
     }
 
-    private void initFragment(){
+    private void initFragment() {
         mBaseFragments = new ArrayList<>();
         mBaseFragments.add(new WalletFragment());
         mBaseFragments.add(new TrendFragment());
         mBaseFragments.add(new CommunityFragment());
         mBaseFragments.add(new MallFragment());
+    }
+
+    private void initDrawer() {
+        Glide.with(this).load(R.mipmap.bg2).apply(bitmapTransform(new BlurTransformation(10))).into(mIvBg);
     }
 
     //------------------------设置底部的按钮------------------
@@ -69,11 +118,49 @@ public class MainActivity extends FragmentActivity {
         radioGroup.check(R.id.rb_wallet);
     }
 
-    class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener{
+    @OnClick({R.id.iv_qrcode, R.id.ll_menu_import_wallet, R.id.ll_menu_create_wallet, R.id.ll_menu_wallet_manage, R.id.ll_menu_personal_fortune, R.id.ll_menu_message_center, R.id.ll_menu_contacts, R.id.ll_menu_customer_service, R.id.ll_menu_help, R.id.ll_menu_account_manage, R.id.ll_menu_system_manage, R.id.ll_menu_exit, R.id.navigation_view})
+    public void onClick(View v) {
+        switch (v.getId()) {
+            default:
+                break;
+            case R.id.iv_qrcode:
+                Toast.makeText(this,"二维码",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.ll_menu_import_wallet:
+                Toast.makeText(this,"导入钱包",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.ll_menu_create_wallet:
+                Toast.makeText(this,"创建钱包",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.ll_menu_wallet_manage:
+                break;
+            case R.id.ll_menu_personal_fortune:
+                break;
+            case R.id.ll_menu_message_center:
+                break;
+            case R.id.ll_menu_contacts:
+                break;
+            case R.id.ll_menu_customer_service:
+                break;
+            case R.id.ll_menu_help:
+                break;
+            case R.id.ll_menu_account_manage:
+                break;
+            case R.id.ll_menu_system_manage:
+                break;
+            case R.id.ll_menu_exit:
+                Toast.makeText(this,"退出",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.navigation_view:
+                break;
+        }
+    }
+
+    class MyOnCheckedChangeListener implements RadioGroup.OnCheckedChangeListener {
 
         @Override
         public void onCheckedChanged(RadioGroup group, int checkedId) {
-            switch (checkedId){
+            switch (checkedId) {
                 case R.id.rb_wallet:
                     position = 0;
                     break;
@@ -94,29 +181,30 @@ public class MainActivity extends FragmentActivity {
             //根据位置对应的Fragment
             BaseFragment to = getFragment();
             //替换
-            switchFragment(mContent,to);
+            switchFragment(mContent, to);
         }
     }
+
     //from 原先是，to后来的fragment
-    private void switchFragment(android.support.v4.app.Fragment from, android.support.v4.app.Fragment to) {
-        if(from != to){
+    private void switchFragment(Fragment from, Fragment to) {
+        if (from != to) {
             mContent = to;
             FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
             //判断有没有被添加
-            if(!to.isAdded()){
+            if (!to.isAdded()) {
                 //to没有被添加 from隐藏 添加to
-                if (from != null){
+                if (from != null) {
                     ft.hide(from);
                 }
-                if(to != null){
-                    ft.add(R.id.fl_content,to).commit();
+                if (to != null) {
+                    ft.add(R.id.fl_content, to).commit();
                 }
-            }else {
+            } else {
                 //to已经被添加 from隐藏 显示to
-                if (from != null){
+                if (from != null) {
                     ft.hide(from);
                 }
-                if(to != null){
+                if (to != null) {
                     ft.show(to).commit();
                 }
             }
