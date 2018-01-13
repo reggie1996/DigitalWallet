@@ -19,13 +19,6 @@
             android:layout_width="match_parent"
             android:layout_height="180dp">
 
-            <ImageView
-                android:id="@+id/iv_bg"
-                android:layout_width="match_parent"
-                android:layout_height="180dp"
-                android:scaleType="centerCrop"
-                android:src="@mipmap/test" />
-
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -50,6 +43,13 @@
                     android:textColor="@android:color/white"
                     android:textSize="20sp" />
             </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_bg"
+                android:layout_width="match_parent"
+                android:layout_height="180dp"
+                android:scaleType="centerCrop"
+                android:src="@mipmap/personbackground" />
 
 
         </FrameLayout>
