@@ -40,12 +40,11 @@
             android:button="@null"/>
 
         <RadioButton
-            android:id="@+id/rb_news"
-            android:text="资讯"
-            android:drawableTop="@drawable/rb_news_drawable_selector"
+            android:id="@+id/rb_trend"
+            android:text="行情"
+            android:drawableTop="@drawable/rb_trend_drawable_selector"
             style="@style/botttom_tag_style"
-            android:button="@null"
-            />
+            android:button="@null"/>
 
         <RadioButton
             android:id="@+id/rb_community"
@@ -55,10 +54,10 @@
             android:text="社区" />
 
         <RadioButton
-            android:id="@+id/rb_me"
+            android:id="@+id/rb_mall"
             style="@style/botttom_tag_style"
             android:button="@null"
-            android:drawableTop="@drawable/rb_me_drawable_selector"
-            android:text="我" />
+            android:drawableTop="@drawable/rb_mall_drawable_selector"
+            android:text="商城" />
     </RadioGroup>
 </LinearLayout>

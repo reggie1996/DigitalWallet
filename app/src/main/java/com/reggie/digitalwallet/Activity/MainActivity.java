@@ -7,10 +7,9 @@ import android.widget.RadioGroup;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.Fragment.BaseFragment;
-import com.reggie.digitalwallet.Fragment.BlankFragment;
 import com.reggie.digitalwallet.Fragment.CommunityFragment;
-import com.reggie.digitalwallet.Fragment.MeFragment;
-import com.reggie.digitalwallet.Fragment.NewsFragment;
+import com.reggie.digitalwallet.Fragment.MallFragment;
+import com.reggie.digitalwallet.Fragment.TrendFragment;
 import com.reggie.digitalwallet.Fragment.WalletFragment;
 import com.reggie.digitalwallet.R;
 
@@ -62,13 +61,13 @@ public class MainActivity extends FragmentActivity {
                 case R.id.rb_wallet:
                     position = 0;
                     break;
-                case R.id.rb_news:
+                case R.id.rb_trend:
                     position = 1;
                     break;
                 case R.id.rb_community:
                     position = 2;
                     break;
-                case R.id.rb_me:
+                case R.id.rb_mall:
                     position = 3;
                     break;
                 default:
@@ -119,9 +118,9 @@ public class MainActivity extends FragmentActivity {
     private void initFragment(){
         mBaseFragments = new ArrayList<>();
         mBaseFragments.add(new WalletFragment());
-        mBaseFragments.add(new NewsFragment());
+        mBaseFragments.add(new TrendFragment());
         mBaseFragments.add(new CommunityFragment());
-        mBaseFragments.add(new MeFragment());
+        mBaseFragments.add(new MallFragment());
     }
 
 }

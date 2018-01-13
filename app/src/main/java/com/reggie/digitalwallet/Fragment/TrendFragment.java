@@ -12,13 +12,13 @@ import com.reggie.digitalwallet.R;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class NewsFragment extends BaseFragment {
+public class TrendFragment extends BaseFragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_news, container, false);
+        return inflater.inflate(R.layout.fragment_trend, container, false);
     }
 
     @Override
