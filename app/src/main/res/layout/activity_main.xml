@@ -1,63 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:id="@+id/activity_main"
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawer"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:fitsSystemWindows="true"
-    android:clipToPadding="false">
+    android:layout_height="match_parent">
 
-    <!--FrameLayout-->
-    <FrameLayout
-        android:id="@+id/fl_content"
-        android:layout_weight="1.18"
+    <LinearLayout
+        android:orientation="vertical"
+        android:id="@+id/activity_main"
         android:layout_width="match_parent"
-        android:layout_height="0dp"/>
-    <View
-        android:id="@+id/divider"
-        android:layout_width="fill_parent"
-        android:layout_height="0.5dp"
-        android:shape = "rectangle"
-        android:background="#dbdbdb"
-        />
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:clipToPadding="false">
 
-    <!--底部的RadioGroup-->
-    <RadioGroup
-        android:id="@+id/rg_bottom_tag"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:background="@android:color/background_light"
-        android:gravity="center_vertical"
-        android:orientation="horizontal"
-        android:padding="3dp">
+        <!--FrameLayout-->
+        <FrameLayout
+            android:id="@+id/fl_content"
+            android:layout_weight="1.18"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"/>
+        <View
+            android:id="@+id/divider"
+            android:layout_width="fill_parent"
+            android:layout_height="0.5dp"
+            android:shape = "rectangle"
+            android:background="#dbdbdb"
+            />
 
-        <RadioButton
-            android:id="@+id/rb_wallet"
-            android:text="钱包"
-            android:drawableTop="@drawable/rb_wallet_drawable_selector"
-            style="@style/botttom_tag_style"
-            android:duplicateParentState="false"
-            android:button="@null"/>
+        <!--底部的RadioGroup-->
+        <RadioGroup
+            android:id="@+id/rg_bottom_tag"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/background_light"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:padding="3dp">
 
-        <RadioButton
-            android:id="@+id/rb_trend"
-            android:text="行情"
-            android:drawableTop="@drawable/rb_trend_drawable_selector"
-            style="@style/botttom_tag_style"
-            android:button="@null"/>
+            <RadioButton
+                android:id="@+id/rb_wallet"
+                android:text="钱包"
+                android:drawableTop="@drawable/rb_wallet_drawable_selector"
+                style="@style/botttom_tag_style"
+                android:duplicateParentState="false"
+                android:button="@null"/>
 
-        <RadioButton
-            android:id="@+id/rb_community"
-            style="@style/botttom_tag_style"
-            android:button="@null"
-            android:drawableTop="@drawable/rb_community_drawable_selector"
-            android:text="社区" />
+            <RadioButton
+                android:id="@+id/rb_trend"
+                android:text="行情"
+                android:drawableTop="@drawable/rb_trend_drawable_selector"
+                style="@style/botttom_tag_style"
+                android:button="@null"/>
 
-        <RadioButton
-            android:id="@+id/rb_mall"
-            style="@style/botttom_tag_style"
-            android:button="@null"
-            android:drawableTop="@drawable/rb_mall_drawable_selector"
-            android:text="商城" />
-    </RadioGroup>
-</LinearLayout>
+            <RadioButton
+                android:id="@+id/rb_community"
+                style="@style/botttom_tag_style"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_community_drawable_selector"
+                android:text="社区" />
+
+            <RadioButton
+                android:id="@+id/rb_mall"
+                style="@style/botttom_tag_style"
+                android:button="@null"
+                android:drawableTop="@drawable/rb_mall_drawable_selector"
+                android:text="商城" />
+        </RadioGroup>
+    </LinearLayout>
+
+    <include layout="@layout/drawer_left" />
+
+</android.support.v4.widget.DrawerLayout>

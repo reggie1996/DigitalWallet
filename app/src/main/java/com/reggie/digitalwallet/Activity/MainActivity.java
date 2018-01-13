@@ -3,6 +3,7 @@ package com.reggie.digitalwallet.Activity;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentTransaction;
 import android.os.Bundle;
+import android.support.v4.widget.DrawerLayout;
 import android.widget.RadioGroup;
 
 import com.gyf.barlibrary.ImmersionBar;
@@ -18,6 +19,7 @@ import java.util.List;
 
 public class MainActivity extends FragmentActivity {
 
+    DrawerLayout drawer;
     private RadioGroup radioGroup;
     private List<BaseFragment> mBaseFragments;
     private int position;
@@ -28,6 +30,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //状态栏修改
         ImmersionBar.with(this)
                 .statusBarDarkFont(true)//状态栏字体是深色，不写默认为亮色
                 .init();
@@ -45,6 +48,19 @@ public class MainActivity extends FragmentActivity {
     protected void onDestroy() {
         super.onDestroy();
         ImmersionBar.with(this).destroy(); //必须调用该方法，防止内存泄漏
+    }
+
+    private void initView(){
+        drawer = findViewById(R.id.drawer);
+        radioGroup = findViewById(R.id.rg_bottom_tag);
+    }
+
+    private void initFragment(){
+        mBaseFragments = new ArrayList<>();
+        mBaseFragments.add(new WalletFragment());
+        mBaseFragments.add(new TrendFragment());
+        mBaseFragments.add(new CommunityFragment());
+        mBaseFragments.add(new MallFragment());
     }
 
     //------------------------设置底部的按钮------------------
@@ -112,15 +128,5 @@ public class MainActivity extends FragmentActivity {
         return fragment;
     }
 
-    private void initView(){
-        radioGroup = findViewById(R.id.rg_bottom_tag);
-    }
-    private void initFragment(){
-        mBaseFragments = new ArrayList<>();
-        mBaseFragments.add(new WalletFragment());
-        mBaseFragments.add(new TrendFragment());
-        mBaseFragments.add(new CommunityFragment());
-        mBaseFragments.add(new MallFragment());
-    }
 
 }
