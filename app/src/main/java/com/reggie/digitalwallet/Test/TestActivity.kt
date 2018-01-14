@@ -24,6 +24,7 @@ class TestActivity : Activity() {
             val bitmap : Bitmap =  QRCodeGenerator.createQRCode("www.baidu.com",800)
             Glide.with(this).load(bitmap).into(qrcode)
         };
+        buttonsfz.setOnClickListener { startActivity(Intent(this, SFZActivity::class.java)) }
     }
 
 

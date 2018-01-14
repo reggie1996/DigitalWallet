@@ -25,6 +25,12 @@
         android:layout_height="wrap_content"
         android:text="生成二维码" />
 
+    <Button
+        android:id="@+id/buttonsfz"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="身份证识别" />
+
     <ImageView
         android:id="@+id/qrcode"
         android:layout_width="match_parent"

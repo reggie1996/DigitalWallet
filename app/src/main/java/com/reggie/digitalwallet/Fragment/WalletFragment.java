@@ -29,35 +29,20 @@ import de.mrapp.android.tabswitcher.TabSwitcherDecorator;
  */
 public class WalletFragment extends BaseFragment {
 
-    @BindView(R.id.tab_switcher)
-    TabSwitcher tab_switcher;
-    private Unbinder unbinder;
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        unbinder = ButterKnife.bind(this, inflater.inflate(R.layout.fragment_wallet, container, false));
         return inflater.inflate(R.layout.fragment_wallet, container, false);
     }
 
     @Override
     protected View initView() {
-
-
         return null;
     }
 
     @Override
     protected void initData() {
     }
-
-
-    @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        unbinder.unbind();
-    }
-
 
 }
