@@ -2,12 +2,23 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
     tools:context="com.reggie.digitalwallet.Fragment.WalletFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <de.mrapp.android.tabswitcher.TabSwitcher
+        android:id="@+id/tab_switcher"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:custom="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="钱包界面" />
+        android:background="@color/colorGold3"
+        custom:layoutPolicy="auto"
+        custom:tabIcon="@drawable/ic_launcher_background"
+        custom:tabBackgroundColor="@color/colorGold2"
+        custom:tabContentBackgroundColor="@color/colorGold1"
+        custom:tabTitleTextColor="@color/colorGold2"
+        custom:tabCloseButtonIcon="@mipmap/ic_launcher"
+        custom:toolbarTitle="11111"/>
+
 
 </FrameLayout>

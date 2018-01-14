@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/DigitalWallet.iml" filepath="$PROJECT_DIR$/DigitalWallet.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/library-walletdisplay/library-walletdisplay.iml" filepath="$PROJECT_DIR$/library-walletdisplay/library-walletdisplay.iml" />
     </modules>
   </component>
 </project>

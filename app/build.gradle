@@ -19,7 +19,7 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:26.1.0'
     implementation 'com.android.support:design:26.1.0'
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -42,6 +42,8 @@ dependencies {
     annotationProcessor 'com.github.bumptech.glide:compiler:4.5.0'
     compile 'jp.wasabeef:glide-transformations:3.0.1'
     compile 'jp.co.cyberagent.android.gpuimage:gpuimage-library:1.4.1'
+    //钱包的tab展示
+    implementation project(':library-walletdisplay')
 }
 
 apply plugin: 'kotlin-android'
