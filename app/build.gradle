@@ -47,6 +47,8 @@ dependencies {
     //okhttp
     implementation 'com.squareup.okhttp3:okhttp:3.9.1'
     testImplementation 'com.squareup.okhttp3:mockwebserver:3.9.1'
+    //拍照相册
+    compile 'com.jph.takephoto:takephoto_library:4.0.3'
 }
 
 apply plugin: 'kotlin-android'
