@@ -43,6 +43,12 @@
         android:layout_height="wrap_content"
         android:text="选择照片" />
 
+    <Button
+        android:id="@+id/buttonweb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="webview" />
+
     <ImageView
         android:id="@+id/qrcode"
         android:layout_width="match_parent"

@@ -15,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import com.reggie.digitalwallet.R;
 
@@ -51,6 +52,7 @@ public class WalletFragment extends BaseFragment {
         tabSwitcher = view.findViewById(R.id.tab_switcher);
 
         tabSwitcher.setDecorator(new Decorator());
+
         for (int i = 0; i < 5; i++) {
             tabSwitcher.addTab(createTab(i));
         }
@@ -95,14 +97,6 @@ public class WalletFragment extends BaseFragment {
                                   @Nullable final ViewGroup parent, final int viewType) {
             View view;
             view = inflater.inflate(R.layout.tab_text_view, parent, false);
-
-            /*
-            Toolbar toolbar = view.findViewById(R.id.toolbar);
-            toolbar.inflateMenu(R.menu.tab);
-            toolbar.setOnMenuItemClickListener(createToolbarMenuListener());
-            Menu menu = toolbar.getMenu();
-            TabSwitcher.setupWithMenu(tabSwitcher, menu, createTabSwitcherButtonListener());
-            */
             return view;
         }
 
@@ -111,21 +105,10 @@ public class WalletFragment extends BaseFragment {
                               @NonNull final TabSwitcher tabSwitcher, @NonNull final View view,
                               @NonNull final Tab tab, final int index, final int viewType,
                               @Nullable final Bundle savedInstanceState) {
-            //          TextView textView = findViewById(android.R.id.title);
-//            textView.setText(tab.getTitle());
-
-            //Toolbar toolbar = findViewById(R.id.toolbar);
-            //toolbar.setVisibility(tabSwitcher.isSwitcherShown() ? View.GONE : View.VISIBLE);
-
-            if (viewType != 0) {
-                EditText editText = findViewById(android.R.id.edit);
-
-                if (savedInstanceState == null) {
-                    editText.setText(null);
-                }
-
-                editText.requestFocus();
-            }
+            //通过bundle传参数
+            TextView tv = findViewById(android.R.id.text1);
+            int i = (int) tab.getParameters().get("test");
+            tv.setText(i + " " );
         }
 
         @Override
@@ -145,8 +128,10 @@ public class WalletFragment extends BaseFragment {
     private Tab createTab(final int index) {
         CharSequence title = getString(R.string.tab_title, index + 1);
         Tab tab = new Tab(title);
+        //用bundle传参数
         Bundle parameters = new Bundle();
         parameters.putInt(VIEW_TYPE_EXTRA, index % 2);
+        parameters.putInt("test",index);
         tab.setParameters(parameters);
         return tab;
     }

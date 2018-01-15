@@ -92,6 +92,8 @@ class TestActivity : Activity() , TakePhoto.TakeResultListener, InvokeListener {
         buttonsfz.setOnClickListener { startActivity(Intent(this, SFZActivity::class.java)) }
 
         buttonchoosephoto.setOnClickListener{ takePhoto?.onPickFromDocuments()}
+
+        buttonweb.setOnClickListener {  startActivity(Intent(this, WebActivity::class.java)) }
     }
 
 
