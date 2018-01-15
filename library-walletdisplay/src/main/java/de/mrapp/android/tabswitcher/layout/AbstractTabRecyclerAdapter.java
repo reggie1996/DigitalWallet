@@ -108,7 +108,8 @@ public abstract class AbstractTabRecyclerAdapter
         Tab tab = tabItem.getTab();
         AbstractTabViewHolder viewHolder = tabItem.getViewHolder();
         Drawable icon = style.getTabIcon(tab);
-        viewHolder.iconImageView.setImageDrawable(icon);
+       // viewHolder.iconImageView.setImageDrawable(R.drawable.ic_wallet);
+        viewHolder.iconImageView.setImageResource(R.drawable.ic_wallet);
     }
 
     /**

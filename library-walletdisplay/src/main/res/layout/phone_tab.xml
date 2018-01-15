@@ -38,6 +38,7 @@ License.
                 android:id="@+id/tab_icon_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:src="@drawable/ic_wallet"
                 android:contentDescription="@null"
                 android:scaleType="centerInside"/>
 

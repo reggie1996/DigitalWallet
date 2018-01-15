@@ -10,69 +10,82 @@ import android.support.v4.app.Fragment;
 import android.support.v4.view.OnApplyWindowInsetsListener;
 import android.support.v4.view.ViewCompat;
 import android.support.v4.view.WindowInsetsCompat;
-import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
-import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
-import com.reggie.digitalwallet.Activity.MainActivity;
 import com.reggie.digitalwallet.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 import butterknife.Unbinder;
+import de.mrapp.android.tabswitcher.DragGesture;
 import de.mrapp.android.tabswitcher.Layout;
 import de.mrapp.android.tabswitcher.PullDownGesture;
 import de.mrapp.android.tabswitcher.SwipeGesture;
 import de.mrapp.android.tabswitcher.Tab;
 import de.mrapp.android.tabswitcher.TabSwitcher;
 import de.mrapp.android.tabswitcher.TabSwitcherDecorator;
-import de.mrapp.android.util.ThemeUtil;
-
-import static de.mrapp.android.util.DisplayUtil.getDisplayWidth;
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class WalletFragment extends BaseFragment {
 
+    @BindView(R.id.bt_show_wallet_list)
+    Button mBtShowWalletList;
     private TabSwitcher tabSwitcher;
 
     private static final String VIEW_TYPE_EXTRA = WalletFragment.class.getName() + "::ViewType";
+    private View view;
+    private Unbinder unbinder;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-
         View view = inflater.inflate(R.layout.fragment_wallet, container, false);
         tabSwitcher = view.findViewById(R.id.tab_switcher);
-        ViewCompat.setOnApplyWindowInsetsListener(tabSwitcher, createWindowInsetsListener());
+
         tabSwitcher.setDecorator(new Decorator());
         for (int i = 0; i < 5; i++) {
             tabSwitcher.addTab(createTab(i));
         }
 
-
+        unbinder = ButterKnife.bind(this, view);
         return view;
     }
 
     @Override
     protected View initView() {
 
-
         return null;
     }
 
     @Override
     protected void initData() {
+
     }
 
+    @OnClick(R.id.bt_show_wallet_list)
+    public void onClick(View v) {
+        switch (v.getId()) {
+            default:
+                break;
+            case R.id.bt_show_wallet_list:
+                tabSwitcher.toggleSwitcherVisibility();
+                break;
+        }
+    }
 
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        unbinder.unbind();
+    }
 
     private class Decorator extends TabSwitcherDecorator {
 
@@ -81,12 +94,8 @@ public class WalletFragment extends BaseFragment {
         public View onInflateView(@NonNull final LayoutInflater inflater,
                                   @Nullable final ViewGroup parent, final int viewType) {
             View view;
+            view = inflater.inflate(R.layout.tab_text_view, parent, false);
 
-            if (viewType == 0) {
-                view = inflater.inflate(R.layout.tab_edit_text, parent, false);
-            } else {
-                view = inflater.inflate(R.layout.tab_text_view, parent, false);
-            }
             /*
             Toolbar toolbar = view.findViewById(R.id.toolbar);
             toolbar.inflateMenu(R.menu.tab);
@@ -102,7 +111,7 @@ public class WalletFragment extends BaseFragment {
                               @NonNull final TabSwitcher tabSwitcher, @NonNull final View view,
                               @NonNull final Tab tab, final int index, final int viewType,
                               @Nullable final Bundle savedInstanceState) {
-  //          TextView textView = findViewById(android.R.id.title);
+            //          TextView textView = findViewById(android.R.id.title);
 //            textView.setText(tab.getTitle());
 
             //Toolbar toolbar = findViewById(R.id.toolbar);
@@ -140,38 +149,6 @@ public class WalletFragment extends BaseFragment {
         parameters.putInt(VIEW_TYPE_EXTRA, index % 2);
         tab.setParameters(parameters);
         return tab;
-    }
-
-    @NonNull
-    private OnApplyWindowInsetsListener createWindowInsetsListener() {
-        return new OnApplyWindowInsetsListener() {
-
-            @Override
-            public WindowInsetsCompat onApplyWindowInsets(final View v,
-                                                          final WindowInsetsCompat insets) {
-                int left = insets.getSystemWindowInsetLeft();
-                int top = insets.getSystemWindowInsetTop();
-                int right = insets.getSystemWindowInsetRight();
-                int bottom = insets.getSystemWindowInsetBottom();
-                tabSwitcher.setPadding(left, top, right, bottom);
-                float touchableAreaTop = top;
-
-                if (tabSwitcher.getLayout() == Layout.TABLET) {
-                    touchableAreaTop += getResources()
-                            .getDimensionPixelSize(R.dimen.tablet_tab_container_height);
-                }
-
-                RectF touchableArea = new RectF(left, touchableAreaTop,
-                        getDisplayWidth(mContext) - right, touchableAreaTop +
-                        ThemeUtil.getDimensionPixelSize(mContext, R.attr.actionBarSize));
-                tabSwitcher.addDragGesture(
-                        new SwipeGesture.Builder().setTouchableArea(touchableArea).create());
-                tabSwitcher.addDragGesture(
-                        new PullDownGesture.Builder().setTouchableArea(touchableArea).create());
-                return insets;
-            }
-
-        };
     }
 
 
