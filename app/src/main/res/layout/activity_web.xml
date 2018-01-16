@@ -8,5 +8,49 @@
     android:id="@+id/mLinearLayout"
     tools:context="com.reggie.digitalwallet.Test.WebActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?android:actionBarSize"
+        android:background="@color/colorWhite"
+        android:titleTextColor="@android:color/white"
+        app:theme="@style/toolBar"
+        app:titleTextColor="@android:color/white">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:ellipsize="end"
+                android:maxEms="8"
+                android:singleLine="true"
+                android:textColor="@color/colorBlack"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/bt_exit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/chip_close_button_light" />
+        </FrameLayout>
+
+
+
+    </android.support.v7.widget.Toolbar>
+
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="fill_parent"
+        android:layout_height="0.3dp"
+        android:shape = "rectangle"
+        android:background="@color/colorGold2"
+        />
+
 
 </LinearLayout>
