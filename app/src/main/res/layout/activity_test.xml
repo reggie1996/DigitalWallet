@@ -7,51 +7,70 @@
     android:orientation="vertical"
     tools:context="com.reggie.digitalwallet.Test.TestActivity">
 
-    <Button
-        android:id="@+id/buttonmain"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="主界面" />
+        android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/buttonqrcode"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="扫描二维码" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
 
-    <Button
-        android:id="@+id/buttonqrcode2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="生成二维码" />
+            <Button
+                android:id="@+id/buttonqrcode2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="生成二维码" />
 
-    <Button
-        android:id="@+id/buttonsfz"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="身份证识别" />
+            <Button
+                android:id="@+id/buttontakephoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="拍照" />
 
-    <Button
-        android:id="@+id/buttontakephoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="拍照" />
+            <Button
+                android:id="@+id/buttonsfz"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="身份证识别" />
 
-    <Button
-        android:id="@+id/buttonchoosephoto"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="选择照片" />
+            <Button
+                android:id="@+id/buttonqrcode"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="扫描二维码" />
 
-    <Button
-        android:id="@+id/buttonweb"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="webview" />
+            <Button
+                android:id="@+id/buttonweb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="webview" />
 
-    <ImageView
-        android:id="@+id/qrcode"
-        android:layout_width="match_parent"
-        android:layout_height="342dp"
-        android:src="@mipmap/ic_launcher" />
+            <Button
+                android:id="@+id/buttonmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="主界面" />
+
+            <Button
+                android:id="@+id/buttonchoosephoto"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="选择照片" />
+
+            <ImageView
+                android:id="@+id/qrcode"
+                android:layout_width="match_parent"
+                android:layout_height="342dp"
+                android:src="@mipmap/ic_launcher" />
+
+            <Button
+                android:id="@+id/buttonface"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="面部识别" />
+
+        </LinearLayout>
+    </ScrollView>
+
 </LinearLayout>

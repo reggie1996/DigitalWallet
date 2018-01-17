@@ -9,6 +9,13 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        sourceSets.main {
+            jniLibs.srcDirs = ['libs']
+        }
+        ndk {
+            // 加了其他的文件夹（比如 armeabi-v7a，x86等）可能会出问题
+            abiFilters "armeabi"
+        }
     }
     buildTypes {
         release {
@@ -16,7 +23,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
+
+
 }
+
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
@@ -51,6 +61,14 @@ dependencies {
     compile 'com.jph.takephoto:takephoto_library:4.0.3'
     //WebView
     compile 'com.just.agentweb:agentweb:3.1.0'
+
+    compile files('libs/facedetection.jar')
+    compile files('libs/facerecognition.jar')
+    compile files('libs/facetracking.jar')
+    compile files('libs/ageestimation.jar')
+    compile files('libs/genderestimation.jar')
+    compile 'com.guo.android_extend:android-extend:1.0.1'
+
 }
 
 apply plugin: 'kotlin-android'

@@ -8,6 +8,7 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
+        android:name=".ArcFace.Application"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -24,7 +25,13 @@
         </activity>
         <activity android:name=".Activity.QRCodeActivity" />
         <activity android:name=".Test.SFZActivity" />
-        <activity android:name=".Test.WebActivity"></activity>
+        <activity android:name=".Activity.WebActivity"></activity>
+
+        <activity android:name=".ArcFace.MainActivity" />
+        <activity android:name=".ArcFace.DetecterActivity" />
+        <activity android:name=".ArcFace.RegisterActivity" />
+        <activity android:name=".ArcFace.PermissionAcitivity" />
+
     </application>
 
 </manifest>

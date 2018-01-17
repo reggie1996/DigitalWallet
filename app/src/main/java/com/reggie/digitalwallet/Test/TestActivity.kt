@@ -1,11 +1,9 @@
 package com.reggie.digitalwallet.Test
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
-import android.util.Log
 import android.widget.Toast
 import com.bumptech.glide.Glide
 import com.jph.takephoto.app.TakePhoto
@@ -23,9 +21,7 @@ import com.jph.takephoto.app.TakePhotoImpl
 import com.jph.takephoto.permission.TakePhotoInvocationHandler
 import com.jph.takephoto.permission.PermissionManager.TPermissionType
 import com.jph.takephoto.model.TContextWrap
-
-
-
+import com.reggie.digitalwallet.Activity.WebActivity
 
 
 class TestActivity : Activity() , TakePhoto.TakeResultListener, InvokeListener {
@@ -94,6 +90,8 @@ class TestActivity : Activity() , TakePhoto.TakeResultListener, InvokeListener {
         buttonchoosephoto.setOnClickListener{ takePhoto?.onPickFromDocuments()}
 
         buttonweb.setOnClickListener {  startActivity(Intent(this, WebActivity::class.java)) }
+
+        buttonface.setOnClickListener { startActivity(Intent(this, com.reggie.digitalwallet.ArcFace.MainActivity::class.java)) }
     }
 
 
