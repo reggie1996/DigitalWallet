@@ -21,14 +21,5 @@ public class MallFragment extends BaseFragment {
         return inflater.inflate(R.layout.fragment_mall, container, false);
     }
 
-    @Override
-    protected View initView() {
-        return null;
-    }
-
-    @Override
-    protected void initData() {
-
-    }
 
 }

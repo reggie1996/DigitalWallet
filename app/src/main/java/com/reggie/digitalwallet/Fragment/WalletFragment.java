@@ -61,17 +61,6 @@ public class WalletFragment extends BaseFragment {
         return view;
     }
 
-    @Override
-    protected View initView() {
-
-        return null;
-    }
-
-    @Override
-    protected void initData() {
-
-    }
-
     @OnClick(R.id.bt_show_wallet_list)
     public void onClick(View v) {
         switch (v.getId()) {

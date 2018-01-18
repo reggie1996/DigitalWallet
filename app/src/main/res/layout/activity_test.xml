@@ -17,6 +17,12 @@
             android:orientation="vertical" >
 
             <Button
+                android:id="@+id/buttonmain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="主界面" />
+
+            <Button
                 android:id="@+id/buttonqrcode2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -47,12 +53,6 @@
                 android:text="webview" />
 
             <Button
-                android:id="@+id/buttonmain"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="主界面" />
-
-            <Button
                 android:id="@+id/buttonchoosephoto"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -61,7 +61,7 @@
             <ImageView
                 android:id="@+id/qrcode"
                 android:layout_width="match_parent"
-                android:layout_height="342dp"
+                android:layout_height="100dp"
                 android:src="@mipmap/ic_launcher" />
 
             <Button
@@ -69,6 +69,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="面部识别" />
+
+            <Button
+                android:id="@+id/buttonpager"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="ViewPager测试" />
 
         </LinearLayout>
     </ScrollView>

@@ -61,13 +61,17 @@ dependencies {
     compile 'com.jph.takephoto:takephoto_library:4.0.3'
     //WebView
     compile 'com.just.agentweb:agentweb:3.1.0'
-
+    //人脸识别
     compile files('libs/facedetection.jar')
     compile files('libs/facerecognition.jar')
     compile files('libs/facetracking.jar')
     compile files('libs/ageestimation.jar')
     compile files('libs/genderestimation.jar')
     compile 'com.guo.android_extend:android-extend:1.0.1'
+    //文章列表的展示
+    compile 'com.github.florent37:materialviewpager:1.2.3'
+    compile 'com.flaviofaria:kenburnsview:1.0.7'
+    compile 'com.jpardogo.materialtabstrip:library:1.1.0'
 
 }
 

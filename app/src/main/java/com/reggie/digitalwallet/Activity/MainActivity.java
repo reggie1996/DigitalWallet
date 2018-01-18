@@ -1,5 +1,6 @@
 package com.reggie.digitalwallet.Activity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -65,6 +66,9 @@ public class MainActivity extends FragmentActivity {
     private int position;
     private Fragment mContent;
 
+
+    protected ImmersionBar mImmersionBar;
+
     DrawerLayout drawer;
 
 
@@ -74,10 +78,8 @@ public class MainActivity extends FragmentActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        //状态栏修改
-        ImmersionBar.with(this)
-                .statusBarDarkFont(true)//状态栏字体是深色，不写默认为亮色
-                .init();
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.statusBarDarkFont(true).init();
 
         //初始化View
         initView();
@@ -92,8 +94,10 @@ public class MainActivity extends FragmentActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        ImmersionBar.with(this).destroy(); //必须调用该方法，防止内存泄漏
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();
     }
+
 
     private void initView() {
         drawer = findViewById(R.id.drawer);
@@ -163,6 +167,7 @@ public class MainActivity extends FragmentActivity {
             switch (checkedId) {
                 case R.id.rb_wallet:
                     position = 0;
+                    mImmersionBar.fitsSystemWindows(false).transparentStatusBar().init();
                     break;
                 case R.id.rb_trend:
                     position = 1;

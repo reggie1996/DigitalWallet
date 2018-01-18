@@ -23,19 +23,13 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment{
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        return initView();
+        return null;
     }
 
     @Override
     public void onActivityCreated(Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        initData();
     }
 
 
-    protected abstract View initView();
-    /*
-    当子类需要初始化数据，或者联网请求绑定数据，展示数据
-     */
-    protected abstract void initData();
 }

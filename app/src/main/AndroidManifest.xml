@@ -5,7 +5,7 @@
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
 
     <application
         android:name=".ArcFace.Application"
@@ -25,13 +25,12 @@
         </activity>
         <activity android:name=".Activity.QRCodeActivity" />
         <activity android:name=".Test.SFZActivity" />
-        <activity android:name=".Activity.WebActivity"></activity>
-
+        <activity android:name=".Activity.WebActivity" />
         <activity android:name=".ArcFace.MainActivity" />
         <activity android:name=".ArcFace.DetecterActivity" />
         <activity android:name=".ArcFace.RegisterActivity" />
         <activity android:name=".ArcFace.PermissionAcitivity" />
-
+        <activity android:name=".Test.PagerActivity"></activity>
     </application>
 
 </manifest>

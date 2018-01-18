@@ -92,6 +92,8 @@ class TestActivity : Activity() , TakePhoto.TakeResultListener, InvokeListener {
         buttonweb.setOnClickListener {  startActivity(Intent(this, WebActivity::class.java)) }
 
         buttonface.setOnClickListener { startActivity(Intent(this, com.reggie.digitalwallet.ArcFace.MainActivity::class.java)) }
+
+        buttonpager.setOnClickListener { startActivity(Intent(this, WebActivity::class.java))  }
     }
 
 
