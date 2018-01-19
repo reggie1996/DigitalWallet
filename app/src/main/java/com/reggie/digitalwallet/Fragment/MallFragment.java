@@ -15,6 +15,11 @@ import com.reggie.digitalwallet.R;
 public class MallFragment extends BaseFragment {
 
     @Override
+    protected View initView() {
+        return null;
+    }
+
+    @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment

@@ -79,7 +79,9 @@ public class MainActivity extends FragmentActivity {
         ButterKnife.bind(this);
 
         mImmersionBar = ImmersionBar.with(this);
-        mImmersionBar.statusBarDarkFont(true).init();
+        mImmersionBar.statusBarDarkFont(true)
+                .transparentNavigationBar()
+                .init();
 
         //初始化View
         initView();
@@ -167,7 +169,6 @@ public class MainActivity extends FragmentActivity {
             switch (checkedId) {
                 case R.id.rb_wallet:
                     position = 0;
-                    mImmersionBar.fitsSystemWindows(false).transparentStatusBar().init();
                     break;
                 case R.id.rb_trend:
                     position = 1;

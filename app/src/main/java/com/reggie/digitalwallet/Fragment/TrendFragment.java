@@ -1,25 +1,23 @@
 package com.reggie.digitalwallet.Fragment;
 
 
+import android.content.res.Resources;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import com.reggie.digitalwallet.Fragment.ChildFragment.TreadChild1Fragment;
+import com.github.florent37.materialviewpager.MaterialViewPager;
+import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.reggie.digitalwallet.R;
+import com.reggie.digitalwallet.Test.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
-import butterknife.ButterKnife;
-import butterknife.OnClick;
-import butterknife.Unbinder;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -27,32 +25,40 @@ import butterknife.Unbinder;
 public class TrendFragment extends BaseFragment {
 
 
-    List<Fragment> fragments;
-    @BindView(R.id.vp_trend)
     ViewPager mVpTrend;
-    private View view;
-    private Unbinder unbinder;
+
+    List<Fragment> fragments;
+
+    MaterialViewPager materialViewPager;
+    ViewPager viewPager;
+
+
+    @Override
+    protected View initView() {
+        return null;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        Log.d("onCreateView","1111111");
-        unbinder = ButterKnife.bind(this, inflater.inflate(R.layout.fragment_trend, container, false));
-        initView();
-        return inflater.inflate(R.layout.fragment_trend, container, false);
-    }
+        // Inflate the layout for this fragment
+        View view = inflater.inflate(R.layout.fragment_trend, container, false);
 
-    private void initView() {
+        materialViewPager = view.findViewById(R.id.materialViewPager);
+        viewPager = materialViewPager.getViewPager();
+        materialViewPager.getPagerTitleStrip().setTextColorResource(R.color.colorWhite);
 
         fragments = new ArrayList<>();
-        fragments.add(new TreadChild1Fragment());
-        fragments.add(new TreadChild1Fragment());
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new RecyclerViewFragment());
 
-        mVpTrend.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
+
+        viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
                 return fragments.get(position);
-
             }
 
             @Override
@@ -61,18 +67,75 @@ public class TrendFragment extends BaseFragment {
             }
 
             @Override
-            public boolean isViewFromObject(View view, Object object) {
-                return view==object;
+            public CharSequence getPageTitle(int position) {
+                switch (position % 4) {
+                    case 0:
+                        return "热门";
+                    case 1:
+                        return "比特币";
+                    case 2:
+                        return "以太币";
+                    case 3:
+                        return "莱特币";
+                }
+                return "";
             }
         });
 
-    }
 
+        materialViewPager.setMaterialViewPagerListener(new MaterialViewPager.Listener() {
+            @Override
+            public HeaderDesign getHeaderDesign(int page) {
+                Resources resources = mContext.getResources();
+                Drawable drawable;
+                switch (page) {
+                    case 0:
+                        drawable = resources.getDrawable(R.drawable.bg_bitcoin);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                    case 1:
+                        drawable = resources.getDrawable(R.drawable.test);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                    case 2:
+                        drawable = resources.getDrawable(R.drawable.test);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                    case 3:
+                        drawable = resources.getDrawable(R.drawable.test);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                }
+
+                //execute others actions if needed (ex : modify your header logo)
+
+                return null;
+            }
+        });
+
+
+        materialViewPager.getViewPager().setOffscreenPageLimit(materialViewPager.getViewPager().getAdapter().getCount());
+        materialViewPager.getPagerTitleStrip().setViewPager(materialViewPager.getViewPager());
+
+ /*
+        mVpTrend.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return fragments.get(position);
+            }
+
+            @Override
+            public int getCount() {
+                return fragments.size();
+            }
+        });
+
+        */
+
+
+        return view;
+    }
 
     @Override
     public void onDestroyView() {
         super.onDestroyView();
-        unbinder.unbind();
     }
+
 
 }

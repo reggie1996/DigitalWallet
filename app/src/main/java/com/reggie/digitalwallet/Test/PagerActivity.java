@@ -1,14 +1,12 @@
 package com.reggie.digitalwallet.Test;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 
-import com.reggie.digitalwallet.Fragment.ChildFragment.TreadChild1Fragment;
+import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.R;
 
 import java.util.ArrayList;
@@ -29,19 +27,21 @@ public class PagerActivity extends FragmentActivity {
         setContentView(R.layout.activity_pager);
         ButterKnife.bind(this);
 
-        fragments = new ArrayList<>();
-        fragments.add(new TreadChild1Fragment());
-        fragments.add(new TreadChild1Fragment());
+        ImmersionBar.with(this).init();
 
-        mTestPager.setAdapter(new FragmentPagerAdapter(getApplication()) {
+        fragments = new ArrayList<>();
+        fragments.add(new RecyclerViewFragment());
+        fragments.add(new RecyclerViewFragment());
+
+        mTestPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return null;
+                return fragments.get(position);
             }
 
             @Override
             public int getCount() {
-                return 0;
+                return fragments.size();
             }
         });
     }

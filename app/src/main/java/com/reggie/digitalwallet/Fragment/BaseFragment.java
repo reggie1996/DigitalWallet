@@ -20,6 +20,8 @@ public abstract class BaseFragment extends android.support.v4.app.Fragment{
         mContext = getActivity();
     }
 
+    protected abstract View initView();
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {

@@ -93,7 +93,7 @@ class TestActivity : Activity() , TakePhoto.TakeResultListener, InvokeListener {
 
         buttonface.setOnClickListener { startActivity(Intent(this, com.reggie.digitalwallet.ArcFace.MainActivity::class.java)) }
 
-        buttonpager.setOnClickListener { startActivity(Intent(this, WebActivity::class.java))  }
+        buttonpager.setOnClickListener { startActivity(Intent(this, PagerActivity::class.java))  }
     }
 
 
