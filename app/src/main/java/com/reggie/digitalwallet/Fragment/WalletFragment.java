@@ -10,8 +10,9 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ImageView;
 
+import com.bumptech.glide.Glide;
 import com.reggie.digitalwallet.R;
 
 import butterknife.BindView;
@@ -21,6 +22,9 @@ import butterknife.Unbinder;
 import de.mrapp.android.tabswitcher.Tab;
 import de.mrapp.android.tabswitcher.TabSwitcher;
 import de.mrapp.android.tabswitcher.TabSwitcherDecorator;
+import jp.wasabeef.glide.transformations.BlurTransformation;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,15 +49,16 @@ public class WalletFragment extends BaseFragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_wallet, container, false);
-        tabSwitcher = view.findViewById(R.id.tab_switcher);
 
+        tabSwitcher = view.findViewById(R.id.tab_switcher);
         tabSwitcher.setDecorator(new Decorator());
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             tabSwitcher.addTab(createTab(i));
         }
-
         unbinder = ButterKnife.bind(this, view);
+
+
         return view;
     }
 
@@ -91,9 +96,11 @@ public class WalletFragment extends BaseFragment {
                               @NonNull final Tab tab, final int index, final int viewType,
                               @Nullable final Bundle savedInstanceState) {
             //通过bundle传参数
+            /*
             TextView tv = findViewById(android.R.id.text1);
             int i = (int) tab.getParameters().get("test");
             tv.setText(i + " " );
+            */
         }
 
         @Override
@@ -116,7 +123,7 @@ public class WalletFragment extends BaseFragment {
         //用bundle传参数
         Bundle parameters = new Bundle();
         parameters.putInt(VIEW_TYPE_EXTRA, index % 2);
-        parameters.putInt("test",index);
+        parameters.putInt("test", index);
         tab.setParameters(parameters);
         return tab;
     }
