@@ -13,6 +13,7 @@ import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.gyf.barlibrary.BarHide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.Fragment.BaseFragment;
 import com.reggie.digitalwallet.Fragment.CommunityFragment;
@@ -79,9 +80,7 @@ public class MainActivity extends FragmentActivity {
         ButterKnife.bind(this);
 
         mImmersionBar = ImmersionBar.with(this);
-        mImmersionBar.statusBarDarkFont(true)
-                .transparentNavigationBar()
-                .init();
+        mImmersionBar.init();
 
         //初始化View
         initView();

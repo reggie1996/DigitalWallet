@@ -47,6 +47,7 @@ public class TrendFragment extends BaseFragment {
         materialViewPager = view.findViewById(R.id.materialViewPager);
         viewPager = materialViewPager.getViewPager();
         materialViewPager.getPagerTitleStrip().setTextColorResource(R.color.colorWhite);
+        materialViewPager.getToolbar().removeViewAt(0);
 
         fragments = new ArrayList<>();
         fragments.add(new RecyclerViewFragment());

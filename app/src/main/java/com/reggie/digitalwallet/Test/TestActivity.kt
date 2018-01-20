@@ -6,6 +6,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.widget.Toast
 import com.bumptech.glide.Glide
+import com.gyf.barlibrary.ImmersionBar
 import com.jph.takephoto.app.TakePhoto
 import com.jph.takephoto.app.TakePhotoActivity
 import com.jph.takephoto.model.InvokeParam
@@ -78,6 +79,8 @@ class TestActivity : Activity() , TakePhoto.TakeResultListener, InvokeListener {
         getTakePhoto()?.onCreate(savedInstanceState)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_test)
+
+        ImmersionBar.with(this).init()
         buttonmain.setOnClickListener{startActivity(Intent(this, MainActivity::class.java))}
         buttonqrcode.setOnClickListener { startActivityForResult(Intent(this, QRCodeActivity::class.java),1) }
         buttonqrcode2.setOnClickListener{

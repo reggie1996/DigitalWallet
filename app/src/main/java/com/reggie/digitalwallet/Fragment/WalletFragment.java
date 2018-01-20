@@ -2,19 +2,14 @@ package com.reggie.digitalwallet.Fragment;
 
 
 import android.content.Context;
-import android.graphics.RectF;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v4.view.OnApplyWindowInsetsListener;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.WindowInsetsCompat;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
 import com.reggie.digitalwallet.R;
@@ -23,10 +18,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import de.mrapp.android.tabswitcher.DragGesture;
-import de.mrapp.android.tabswitcher.Layout;
-import de.mrapp.android.tabswitcher.PullDownGesture;
-import de.mrapp.android.tabswitcher.SwipeGesture;
 import de.mrapp.android.tabswitcher.Tab;
 import de.mrapp.android.tabswitcher.TabSwitcher;
 import de.mrapp.android.tabswitcher.TabSwitcherDecorator;
@@ -90,7 +81,7 @@ public class WalletFragment extends BaseFragment {
         public View onInflateView(@NonNull final LayoutInflater inflater,
                                   @Nullable final ViewGroup parent, final int viewType) {
             View view;
-            view = inflater.inflate(R.layout.tab_text_view, parent, false);
+            view = inflater.inflate(R.layout.tab_wallet_view, parent, false);
             return view;
         }
 

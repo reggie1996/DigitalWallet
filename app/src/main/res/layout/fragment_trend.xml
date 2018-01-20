@@ -6,32 +6,45 @@
     android:orientation="vertical"
     tools:context="com.reggie.digitalwallet.Fragment.TrendFragment">
 
-<!--
-    <android.support.v4.view.ViewPager
-        android:id="@+id/vp_trend"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
 
--->
-    <com.github.florent37.materialviewpager.MaterialViewPager
-        android:id="@+id/materialViewPager"
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:viewpager_logo="@layout/header_logo"
-        app:viewpager_pagerTitleStrip="@layout/material_view_pager_pagertitlestrip_newstand"
-        app:viewpager_logoMarginTop="100dp"
-        app:viewpager_color="@color/colorGold3"
-        app:viewpager_headerHeight="200dp"
-        app:viewpager_headerAlpha="1.0"
-        app:viewpager_imageHeaderDarkLayerAlpha="0.2"
-        app:viewpager_hideLogoWithFade="false"
-        app:viewpager_hideToolbarAndTitle="false"
-        app:viewpager_enableToolbarElevation="true"
-        app:viewpager_parallaxHeaderFactor="1.5"
-        app:viewpager_headerAdditionalHeight="20dp"
-        app:viewpager_displayToolbarWhenSwipe="true"
-        app:viewpager_transparentToolbar="false"
-        app:viewpager_animatedHeaderImage="true"
-        />
+        android:layout_height="match_parent">
+
+
+
+        <com.github.florent37.materialviewpager.MaterialViewPager
+            android:id="@+id/materialViewPager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:viewpager_logo="@layout/header_logo"
+            app:viewpager_pagerTitleStrip="@layout/material_view_pager_pagertitlestrip_newstand"
+            app:viewpager_logoMarginTop="100dp"
+            app:viewpager_color="@color/colorGold3"
+            app:viewpager_headerHeight="200dp"
+            app:viewpager_headerAlpha="1.0"
+            app:viewpager_imageHeaderDarkLayerAlpha="0.2"
+            app:viewpager_hideLogoWithFade="false"
+            app:viewpager_hideToolbarAndTitle="false"
+            app:viewpager_enableToolbarElevation="true"
+            app:viewpager_parallaxHeaderFactor="1.5"
+            app:viewpager_headerAdditionalHeight="20dp"
+            app:viewpager_displayToolbarWhenSwipe="true"
+            app:viewpager_transparentToolbar="false"
+            app:viewpager_animatedHeaderImage="true">
+        </com.github.florent37.materialviewpager.MaterialViewPager>
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="centerInside"
+            android:src="@drawable/ic_news"
+            android:background="@null"
+            android:layout_marginTop="15dp"
+            android:layout_marginLeft="12dp"/>
+
+
+    </FrameLayout>
 
 </LinearLayout>
