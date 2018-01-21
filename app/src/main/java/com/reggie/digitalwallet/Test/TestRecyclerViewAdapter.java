@@ -16,22 +16,13 @@ public class TestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
 
     List<Object> contents;
 
-    static final int TYPE_HEADER = 0;
-    static final int TYPE_CELL = 1;
 
     public TestRecyclerViewAdapter(List<Object> contents) {
         this.contents = contents;
     }
 
     @Override
-    public int getItemViewType(int position) {
-        switch (position) {
-            case 0:
-                return TYPE_HEADER;
-            default:
-                return TYPE_CELL;
-        }
-    }
+    public int getItemViewType(int position) { return position;}
 
     @Override
     public int getItemCount() {
@@ -41,32 +32,15 @@ public class TestRecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.V
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = null;
-
-        switch (viewType) {
-            case TYPE_HEADER: {
-                view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.list_item_card_big, parent, false);
-                return new RecyclerView.ViewHolder(view) {
-                };
-            }
-            case TYPE_CELL: {
-                view = LayoutInflater.from(parent.getContext())
-                        .inflate(R.layout.list_item_card_small, parent, false);
-                return new RecyclerView.ViewHolder(view) {
-                };
-            }
-        }
-        return null;
+        view = LayoutInflater.from(parent.getContext())
+                        .inflate(R.layout.list_item_card_news, parent, false);
+        return new RecyclerView.ViewHolder(view) { };
     }
 
 
     @Override
     public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
-        switch (getItemViewType(position)) {
-            case TYPE_HEADER:
-                break;
-            case TYPE_CELL:
-                break;
-        }
+
     }
+
 }

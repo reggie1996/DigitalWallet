@@ -95,10 +95,10 @@ public class TrendFragment extends BaseFragment {
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
                     case 1:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold3,drawable);
                     case 2:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
                     case 3:
                         drawable = resources.getDrawable(R.drawable.test);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
@@ -110,25 +110,8 @@ public class TrendFragment extends BaseFragment {
             }
         });
 
-
         materialViewPager.getViewPager().setOffscreenPageLimit(materialViewPager.getViewPager().getAdapter().getCount());
         materialViewPager.getPagerTitleStrip().setViewPager(materialViewPager.getViewPager());
-
- /*
-        mVpTrend.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
-            @Override
-            public Fragment getItem(int position) {
-                return fragments.get(position);
-            }
-
-            @Override
-            public int getCount() {
-                return fragments.size();
-            }
-        });
-
-        */
-
 
         return view;
     }

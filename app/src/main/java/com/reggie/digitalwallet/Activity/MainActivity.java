@@ -167,18 +167,23 @@ public class MainActivity extends FragmentActivity {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
                 case R.id.rb_wallet:
+                    mImmersionBar.transparentBar().statusBarDarkFont(true).init();
                     position = 0;
                     break;
                 case R.id.rb_trend:
+                    mImmersionBar.transparentBar().statusBarDarkFont(false).init();
                     position = 1;
                     break;
                 case R.id.rb_community:
+                    mImmersionBar.transparentBar().statusBarDarkFont(true).init();
                     position = 2;
                     break;
                 case R.id.rb_mall:
+                    mImmersionBar.statusBarDarkFont(true).init();
                     position = 3;
                     break;
                 default:
+                    mImmersionBar.transparentBar().statusBarDarkFont(true).init();
                     position = 0;
                     break;
             }

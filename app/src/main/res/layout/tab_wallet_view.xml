@@ -21,11 +21,15 @@ License.
 
     <include layout="@layout/tab_wallet_view_head"/>
 
-
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorGold1"
+        android:layout_gravity="center"/>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="horizontal">
 
         <TextView
@@ -34,16 +38,19 @@ License.
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="收款"
+            android:text="转账"
             android:textColor="@color/colorWhite"
+            android:background="@drawable/tv_transfer_bg_selector"
             android:textSize="20dp"
             android:padding="10dp"
-            android:background="@color/colorBlack"/>
+            android:clickable="true"/>
 
 
-        <Space
-            android:layout_width="1dp"
-            android:layout_height="wrap_content"/>
+        <View
+            android:layout_width="0.5dp"
+            android:layout_height="30dp"
+            android:background="@color/white"
+            android:layout_gravity="center"/>
 
         <TextView
             android:id="@+id/textView4"
@@ -51,12 +58,19 @@ License.
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:text="转款"
-            android:textColor="@color/colorWhite"
+            android:text="收款"
+            android:textColor="@color/white"
+            android:background="@drawable/tv_transfer_bg_selector"
             android:textSize="20dp"
             android:padding="10dp"
-            android:background="@color/colorBlack"/>
+            android:clickable="true"/>
     </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.3dp"
+        android:background="@color/colorGold1"
+        android:layout_gravity="center"/>
 
 
 
