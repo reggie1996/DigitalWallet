@@ -2,17 +2,33 @@ package com.reggie.digitalwallet.Fragment;
 
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.reggie.digitalwallet.R;
+import com.reggie.digitalwallet.Test.RecyclerViewFragment;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import butterknife.BindView;
 
 /**
- * A simple {@link Fragment} subclass.
+ *
  */
 public class CommunityFragment extends BaseFragment {
+
+    TabLayout tablayout;
+    ViewPager viewpager;
+    FragmentPagerAdapter adapter;
+    private View view;
+
+    private List<String> list_title;
 
     @Override
     protected View initView() {
@@ -22,8 +38,37 @@ public class CommunityFragment extends BaseFragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_community, container, false);
+        view = inflater.inflate(R.layout.fragment_community, container, false);
+
+        tablayout = view.findViewById(R.id.tablayout);
+        viewpager = view.findViewById(R.id.viewpager);
+
+        list_title = new ArrayList<>();
+        list_title.add("热门");
+        list_title.add("关注");
+        list_title.add("专家");
+
+        adapter = new FragmentPagerAdapter(getChildFragmentManager()) {
+            @Override
+            public Fragment getItem(int position) {
+                return new RecyclerViewFragment();
+            }
+
+            @Override
+            public int getCount() {
+                return 3;
+            }
+
+            @Override
+            public CharSequence getPageTitle(int position) {
+                return list_title.get(position);
+            }
+        };
+
+        viewpager.setAdapter(adapter);
+        tablayout.setupWithViewPager(viewpager);
+
+        return view;
     }
 
 }

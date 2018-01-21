@@ -79,6 +79,7 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     //MD风格
     compile 'com.github.vajro:MaterialDesignLibrary:1.6'
+
 }
 
 apply plugin: 'kotlin-android'
