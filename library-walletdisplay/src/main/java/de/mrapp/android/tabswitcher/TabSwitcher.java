@@ -260,7 +260,6 @@ public class TabSwitcher extends FrameLayout implements TabSwitcherLayout, Model
      */
     private void initializeLayout(@NonNull final Layout layout, final boolean inflatedTabsOnly) {
         if (layout == Layout.TABLET) {
-            // TODO: Use tablet layout once implemented
             this.layout = new PhoneTabSwitcherLayout(TabSwitcher.this, model,
                     new PhoneArithmetics(TabSwitcher.this), style, touchEventDispatcher);
         } else {

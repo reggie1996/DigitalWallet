@@ -8,18 +8,19 @@
 
 
 
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
 
         <Button
             android:id="@+id/bt_show_wallet_list"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Button" />
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_gravity="bottom"/>
 
-        <de.mrapp.android.tabswitcher.TabSwitcher android:id="@+id/tab_switcher"
+        <de.mrapp.android.tabswitcher.TabSwitcher
+            android:id="@+id/tab_switcher"
             xmlns:android="http://schemas.android.com/apk/res/android"
             xmlns:custom="http://schemas.android.com/apk/res-auto"
             android:layout_width="match_parent"
@@ -27,7 +28,7 @@
             custom:emptyView="@layout/empty_view"
             android:background="@color/colorWhite"/>
 
-    </LinearLayout>
+    </FrameLayout>
 
 
 

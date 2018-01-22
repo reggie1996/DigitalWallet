@@ -53,6 +53,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:scaleType="centerInside"
                 android:src="@mipmap/ic_message"
                 />
 
@@ -61,6 +62,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:src="@mipmap/ic_friends"
+                android:scaleType="centerInside"
                 android:background="@null"/>
         </LinearLayout>
 

@@ -3293,7 +3293,6 @@ public class PhoneTabSwitcherLayout extends AbstractTabSwitcherLayout
     @Override
     public final void onPaddingChanged(final int left, final int top, final int right,
                                        final int bottom) {
-        // TODO: Detach and re-inflate tabs
         adaptToolbarMargin();
     }
 
