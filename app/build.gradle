@@ -79,6 +79,8 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:2.2.0'
     //MD风格
     compile 'com.github.vajro:MaterialDesignLibrary:1.6'
+    //recyclerview动作
+    compile 'jp.wasabeef:recyclerview-animators:2.2.7'
 
 }
 

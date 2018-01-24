@@ -1,33 +1,37 @@
-package com.reggie.digitalwallet.Test;
+package com.reggie.digitalwallet.Fragment.ChildFragment;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import com.reggie.digitalwallet.R;
+import android.view.animation.ScaleAnimation;
 
-import com.github.florent37.materialviewpager.header.MaterialViewPagerHeaderDecorator;
+import com.reggie.digitalwallet.Adapter.CommunityRecyclerViewAdapter;
+import com.reggie.digitalwallet.R;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.recyclerview.adapters.ScaleInAnimationAdapter;
+import jp.wasabeef.recyclerview.animators.ScaleInAnimator;
 
 /**
- * Created by florentchampigny on 24/04/15.
+ * Created by 24073 on 2018/1/24.
  */
-public class RecyclerViewFragment extends Fragment {
 
-    private static final int ITEM_COUNT = 10;
+public class Community1RecyclerViewFragment extends Fragment {
+
+    private static final int ITEM_COUNT = 20;
 
     @BindView(R.id.recyclerView)
-    RecyclerView mRecyclerView;
+    RecyclerView recyclerView;
+    private View view;
 
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -44,11 +48,10 @@ public class RecyclerViewFragment extends Fragment {
             items.add(new Object());
         }
 
-        mRecyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
-        mRecyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        recyclerView.setItemAnimator(new ScaleInAnimator());
+        recyclerView.setHasFixedSize(true);
 
-        mRecyclerView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
-
-        mRecyclerView.setAdapter(new TestRecyclerViewAdapter(items));
+        recyclerView.setAdapter(new CommunityRecyclerViewAdapter(items));
     }
 }

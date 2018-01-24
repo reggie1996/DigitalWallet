@@ -7,6 +7,7 @@ import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 
 import com.gyf.barlibrary.ImmersionBar;
+import com.reggie.digitalwallet.Fragment.ChildFragment.NewsRecyclerViewFragment;
 import com.reggie.digitalwallet.R;
 
 import java.util.ArrayList;
@@ -30,8 +31,8 @@ public class PagerActivity extends FragmentActivity {
         ImmersionBar.with(this).init();
 
         fragments = new ArrayList<>();
-        fragments.add(new RecyclerViewFragment());
-        fragments.add(new RecyclerViewFragment());
+        fragments.add(new NewsRecyclerViewFragment());
+        fragments.add(new NewsRecyclerViewFragment());
 
         mTestPager.setAdapter(new FragmentPagerAdapter(getSupportFragmentManager()) {
             @Override

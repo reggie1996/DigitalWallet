@@ -10,13 +10,11 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.reggie.digitalwallet.Fragment.ChildFragment.Community1RecyclerViewFragment;
 import com.reggie.digitalwallet.R;
-import com.reggie.digitalwallet.Test.RecyclerViewFragment;
 
 import java.util.ArrayList;
 import java.util.List;
-
-import butterknife.BindView;
 
 /**
  *
@@ -51,7 +49,16 @@ public class CommunityFragment extends BaseFragment {
         adapter = new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
             public Fragment getItem(int position) {
-                return new RecyclerViewFragment();
+                switch (position){
+                    case 0:
+                        return new Community1RecyclerViewFragment();
+                    case 1:
+                        return new Community1RecyclerViewFragment();
+                    case 2:
+                        return new Community1RecyclerViewFragment();
+                    default:
+                        return new Community1RecyclerViewFragment();
+                }
             }
 
             @Override

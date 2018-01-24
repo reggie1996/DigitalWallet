@@ -13,8 +13,12 @@ import android.view.ViewGroup;
 
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
+import com.reggie.digitalwallet.Fragment.ChildFragment.NewsRecyclerViewFragment;
+import com.reggie.digitalwallet.Model.News;
+import com.reggie.digitalwallet.Model.TestData;
 import com.reggie.digitalwallet.R;
-import com.reggie.digitalwallet.Test.RecyclerViewFragment;
+
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,13 +28,11 @@ import java.util.List;
  */
 public class TrendFragment extends BaseFragment {
 
-
-    ViewPager mVpTrend;
-
     List<Fragment> fragments;
 
     MaterialViewPager materialViewPager;
     ViewPager viewPager;
+
 
 
     @Override
@@ -49,11 +51,21 @@ public class TrendFragment extends BaseFragment {
         materialViewPager.getPagerTitleStrip().setTextColorResource(R.color.colorWhite);
         materialViewPager.getToolbar().removeViewAt(0);
 
+
+        News[] newslist1 = new News[TestData.getNewsData1().size()];
+        TestData.getNewsData1().toArray(newslist1);
+        News[] newslist2 = new News[TestData.getNewsData2().size()];
+        TestData.getNewsData2().toArray(newslist2);
+        News[] newslist3 = new News[TestData.getNewsData3().size()];
+        TestData.getNewsData3().toArray(newslist3);
+        News[] newslist4 = new News[TestData.getNewsData4().size()];
+        TestData.getNewsData4().toArray(newslist4);
+
         fragments = new ArrayList<>();
-        fragments.add(new RecyclerViewFragment());
-        fragments.add(new RecyclerViewFragment());
-        fragments.add(new RecyclerViewFragment());
-        fragments.add(new RecyclerViewFragment());
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist2));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist3));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist4));
 
 
         viewPager.setAdapter(new FragmentPagerAdapter(getChildFragmentManager()) {
