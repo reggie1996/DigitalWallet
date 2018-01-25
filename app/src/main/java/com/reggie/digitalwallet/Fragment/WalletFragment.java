@@ -86,7 +86,7 @@ public class WalletFragment extends BaseFragment {
         public View onInflateView(@NonNull final LayoutInflater inflater,
                                   @Nullable final ViewGroup parent, final int viewType) {
             View view;
-            view = inflater.inflate(R.layout.tab_wallet_view, parent, false);
+            view = inflater.inflate(R.layout.tab_wallet, parent, false);
             return view;
         }
 

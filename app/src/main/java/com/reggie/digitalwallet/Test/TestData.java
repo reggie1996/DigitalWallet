@@ -1,4 +1,7 @@
-package com.reggie.digitalwallet.Model;
+package com.reggie.digitalwallet.Test;
+
+import com.reggie.digitalwallet.Model.Community;
+import com.reggie.digitalwallet.Model.News;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -63,5 +66,24 @@ public class TestData {
         newsData1.add(news1); newsData1.add(news2); newsData1.add(news3); newsData1.add(news4); newsData1.add(news5);
 
         return newsData1;
+    }
+
+    public static List<Community> getCommunityData1(){
+
+        List<Community> communityList = new ArrayList<>();
+
+        Community community1 = new Community("http://120.79.17.123/static/img/crowdfunding2.jpg","老吴1","今天12:01","这是一段测试的文字","http://120.79.17.123/static/img/crowdfunding2.jpg",1,1,1);
+        Community community2 = new Community("http://120.79.17.123/static/img/crowdfunding2.jpg","老吴2","今天12:01","这是一段测试的文字","http://120.79.17.123/static/img/crowdfunding2.jpg",1,1,1);
+        Community community3 = new Community("http://120.79.17.123/static/img/crowdfunding2.jpg","老吴3","今天12:01","这是一段测试的文字","http://120.79.17.123/static/img/crowdfunding2.jpg",1,1,1);
+        Community community4 = new Community("http://120.79.17.123/static/img/crowdfunding2.jpg","老吴4","今天12:01","这是一段测试的文字","http://120.79.17.123/static/img/crowdfunding2.jpg",1,1,1);
+        Community community5 = new Community("http://120.79.17.123/static/img/crowdfunding2.jpg","老吴5","今天12:01","这是一段测试的文字","http://120.79.17.123/static/img/crowdfunding2.jpg",1,1,1);
+
+        communityList.add(community1);
+        communityList.add(community2);
+        communityList.add(community3);
+        communityList.add(community4);
+        communityList.add(community5);
+
+        return communityList;
     }
 }

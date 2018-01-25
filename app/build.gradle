@@ -81,7 +81,8 @@ dependencies {
     compile 'com.github.vajro:MaterialDesignLibrary:1.6'
     //recyclerview动作
     compile 'jp.wasabeef:recyclerview-animators:2.2.7'
-
+    //banner
+    compile 'com.youth.banner:banner:1.4.10'
 }
 
 apply plugin: 'kotlin-android'

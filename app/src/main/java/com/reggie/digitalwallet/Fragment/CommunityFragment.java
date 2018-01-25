@@ -11,6 +11,8 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community1RecyclerViewFragment;
+import com.reggie.digitalwallet.Fragment.ChildFragment.Community2RecyclerViewFragment;
+import com.reggie.digitalwallet.Fragment.ChildFragment.Community3RecyclerViewFragment;
 import com.reggie.digitalwallet.R;
 
 import java.util.ArrayList;
@@ -53,9 +55,9 @@ public class CommunityFragment extends BaseFragment {
                     case 0:
                         return new Community1RecyclerViewFragment();
                     case 1:
-                        return new Community1RecyclerViewFragment();
+                        return new Community2RecyclerViewFragment();
                     case 2:
-                        return new Community1RecyclerViewFragment();
+                        return new Community3RecyclerViewFragment();
                     default:
                         return new Community1RecyclerViewFragment();
                 }

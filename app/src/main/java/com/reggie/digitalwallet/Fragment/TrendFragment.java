@@ -15,10 +15,8 @@ import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.reggie.digitalwallet.Fragment.ChildFragment.NewsRecyclerViewFragment;
 import com.reggie.digitalwallet.Model.News;
-import com.reggie.digitalwallet.Model.TestData;
+import com.reggie.digitalwallet.Test.TestData;
 import com.reggie.digitalwallet.R;
-
-import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 import java.util.List;
