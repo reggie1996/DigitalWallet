@@ -102,16 +102,16 @@ public class TrendFragment extends BaseFragment {
                 switch (page) {
                     case 0:
                         drawable = resources.getDrawable(R.drawable.bg_bitcoin);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
                     case 1:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold3,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
                     case 2:
                         drawable = resources.getDrawable(R.drawable.test);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
                     case 3:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold1,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
                 }
 
                 //execute others actions if needed (ex : modify your header logo)

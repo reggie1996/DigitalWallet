@@ -11,20 +11,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.reggie.digitalwallet.Model.Wallet;
 import com.reggie.digitalwallet.R;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
+import de.hdodenhof.circleimageview.CircleImageView;
 import de.mrapp.android.tabswitcher.Tab;
 import de.mrapp.android.tabswitcher.TabSwitcher;
 import de.mrapp.android.tabswitcher.TabSwitcherDecorator;
-import jp.wasabeef.glide.transformations.BlurTransformation;
-
-import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -33,6 +34,10 @@ public class WalletFragment extends BaseFragment {
 
     @BindView(R.id.bt_show_wallet_list)
     Button mBtShowWalletList;
+    @BindView(R.id.import_wallet)
+    ImageView import_wallet;
+    @BindView(R.id.new_wallet)
+    ImageView new_wallet;
     private TabSwitcher tabSwitcher;
 
     private static final String VIEW_TYPE_EXTRA = WalletFragment.class.getName() + "::ViewType";
@@ -62,13 +67,19 @@ public class WalletFragment extends BaseFragment {
         return view;
     }
 
-    @OnClick(R.id.bt_show_wallet_list)
+    @OnClick({R.id.bt_show_wallet_list, R.id.import_wallet, R.id.new_wallet})
     public void onClick(View v) {
         switch (v.getId()) {
             default:
                 break;
             case R.id.bt_show_wallet_list:
                 tabSwitcher.toggleSwitcherVisibility();
+                break;
+            case R.id.import_wallet:
+                Toast.makeText(getContext(),"导入钱包",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.new_wallet:
+                Toast.makeText(getContext(),"新建钱包",Toast.LENGTH_LONG).show();
                 break;
         }
     }
@@ -95,23 +106,34 @@ public class WalletFragment extends BaseFragment {
                               @NonNull final TabSwitcher tabSwitcher, @NonNull final View view,
                               @NonNull final Tab tab, final int index, final int viewType,
                               @Nullable final Bundle savedInstanceState) {
-            //通过bundle传参数
-            /*
-            TextView tv = findViewById(android.R.id.text1);
-            int i = (int) tab.getParameters().get("test");
-            tv.setText(i + " " );
-            */
-        }
+            Wallet wallet = tab.getParameters().getParcelable("wallet");
 
-        @Override
-        public int getViewTypeCount() {
-            return 2;
-        }
+            CircleImageView head = findViewById(R.id.iv_wallet_head);
+            TextView name = findViewById(R.id.tv_wallet_name);
+            TextView balance = findViewById(R.id.tv_wallet_balance);
+            TextView pk = findViewById(R.id.tv_wallet_pk);
 
-        @Override
-        public int getViewType(@NonNull final Tab tab, final int index) {
-            Bundle parameters = tab.getParameters();
-            return parameters != null ? parameters.getInt("1") : 0;
+            Glide.with(getContext()).load(wallet.getHeadUrl()).into(head);
+            name.setText(wallet.getName());
+            balance.setText(wallet.getBalance() + "");
+            pk.setText(wallet.getPk());
+
+            //转账
+            findViewById(R.id.send_money).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getContext(), "转账" + index, Toast.LENGTH_LONG).show();
+                }
+            });
+            //收款
+            findViewById(R.id.recive_money).setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(getContext(), "收款" + index, Toast.LENGTH_LONG).show();
+                }
+            });
+
+
         }
 
     }
@@ -120,10 +142,12 @@ public class WalletFragment extends BaseFragment {
     private Tab createTab(final int index) {
         CharSequence title = getString(R.string.tab_title, index + 1);
         Tab tab = new Tab(title);
+
+        Wallet wallet = new Wallet("http://image11.m1905.cn/uploadfile/2012/0509/20120509110013368.jpg", "第一个钱包", 1000, "0xhudafshfuhdsjafhjshfjksf");
         //用bundle传参数
         Bundle parameters = new Bundle();
         parameters.putInt(VIEW_TYPE_EXTRA, index % 2);
-        parameters.putInt("test", index);
+        parameters.putParcelable("wallet", wallet);
         tab.setParameters(parameters);
         return tab;
     }

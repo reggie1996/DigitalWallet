@@ -13,11 +13,6 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <Button
-            android:id="@+id/bt_show_wallet_list"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_gravity="bottom"/>
 
         <de.mrapp.android.tabswitcher.TabSwitcher
             android:id="@+id/tab_switcher"
@@ -27,6 +22,43 @@
             android:layout_height="match_parent"
             custom:emptyView="@layout/empty_view"
             android:background="@color/colorWhite"/>
+
+
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp">
+
+            <Button
+                android:id="@+id/bt_show_wallet_list"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:background="@drawable/ic_wallet_list"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:layout_gravity="right|center">
+
+                <ImageView
+                    android:id="@+id/import_wallet"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_import_wallet"
+                    android:layout_marginRight="10dp"/>
+
+                <ImageView
+                    android:id="@+id/new_wallet"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_new_wallet" />
+
+            </LinearLayout>
+
+        </FrameLayout>
 
     </FrameLayout>
 
