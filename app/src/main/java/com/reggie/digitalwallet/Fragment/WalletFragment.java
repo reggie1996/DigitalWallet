@@ -2,6 +2,7 @@ package com.reggie.digitalwallet.Fragment;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -15,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.reggie.digitalwallet.Activity.ReciveActivity;
+import com.reggie.digitalwallet.Activity.SendActivity;
 import com.reggie.digitalwallet.Model.Wallet;
 import com.reggie.digitalwallet.R;
 
@@ -123,6 +126,7 @@ public class WalletFragment extends BaseFragment {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getContext(), "转账" + index, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getContext(), SendActivity.class));
                 }
             });
             //收款
@@ -130,6 +134,7 @@ public class WalletFragment extends BaseFragment {
                 @Override
                 public void onClick(View view) {
                     Toast.makeText(getContext(), "收款" + index, Toast.LENGTH_LONG).show();
+                    startActivity(new Intent(getContext(), ReciveActivity.class));
                 }
             });
 
