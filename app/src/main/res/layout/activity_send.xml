@@ -80,15 +80,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/fromicon"
+                <ImageView
+                    android:id="@+id/iv_send_from"
                     android:src="@mipmap/test"
                     android:layout_width="50dp"
                     android:layout_marginRight="10dp"
                     android:layout_height="50dp" />
 
                 <Spinner
-                    android:id="@+id/spinner"
+                    android:id="@+id/spinner_send_from"
                     android:layout_width="match_parent"
                     android:layout_gravity="center_vertical"
                     style="?android:attr/textViewStyle"
@@ -121,8 +121,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <de.hdodenhof.circleimageview.CircleImageView
-                    android:id="@+id/toicon"
+                <ImageView
+                    android:id="@+id/iv_send_to"
                     android:layout_width="50dp"
                     android:layout_marginRight="10dp"
                     android:layout_height="50dp"
@@ -134,16 +134,19 @@
                     android:layout_height="match_parent">
 
                     <EditText
-                        android:id="@+id/toName"
-                        android:text="aaa"
+                        android:hint="账户名"
+                        android:id="@+id/et_send_to"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="2dp"
                         android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="@color/colorPrimaryDark"
-                        android:layout_marginRight="10dp" />
+                        android:inputType="textShortMessage"
+                        android:textColor="@color/black"
+                        android:layout_marginRight="10dp"
+                        android:theme="@style/MyEditText"
+                        android:textCursorDrawable = "@null"
+                        android:maxLines="1"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -271,6 +274,8 @@
                         android:layout_weight="1"
                         android:hint="发送数量"
                         android:inputType="numberDecimal"
+                        android:theme="@style/MyEditText"
+                        android:textCursorDrawable = "@null"
                         android:maxLines="1" />
 
                     <TextView
@@ -286,7 +291,7 @@
                 </LinearLayout>
 
                 <Spinner
-                    android:id="@+id/currency_spinner"
+                    android:id="@+id/spinner_send_to"
                     android:layout_width="100dp"
                     android:layout_height="37dp"
                     android:layout_marginBottom="4dp"
@@ -320,7 +325,9 @@
                 android:layout_marginRight="10dp"
                 android:textSize="15dp"
                 android:hint="选填"
-                android:maxLines="2" />
+                android:maxLines="2"
+                android:theme="@style/MyEditText"
+                android:textCursorDrawable = "@null"/>
 
             <Space
                 android:layout_width="match_parent"

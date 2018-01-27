@@ -3,14 +3,21 @@ package com.reggie.digitalwallet.Activity;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.MotionEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.bumptech.glide.Glide;
 import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.R;
-import com.reggie.digitalwallet.Test.TestData;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -25,6 +32,16 @@ public class SendActivity extends Activity {
     ImageView iv_scan;
     @BindView(R.id.bt_send)
     Button bt_send;
+    @BindView(R.id.spinner_send_from)
+    Spinner spinner_send_from;
+    @BindView(R.id.iv_send_from)
+    ImageView iv_send_from;
+    @BindView(R.id.iv_send_to)
+    ImageView iv_send_to;
+    @BindView(R.id.et_send_to)
+    EditText et_send_to;
+    @BindView(R.id.spinner_send_to)
+    Spinner spinner_send_to;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +49,9 @@ public class SendActivity extends Activity {
         setContentView(R.layout.activity_send);
         ButterKnife.bind(this);
         mImmersionBar.with(this).transparentBar().statusBarDarkFont(true).init();
+
+        initSendFrom();
+        initSendTo();
     }
 
     @Override
@@ -40,6 +60,7 @@ public class SendActivity extends Activity {
         if (mImmersionBar != null)
             mImmersionBar.destroy();
     }
+
 
     @OnClick({R.id.iv_back, R.id.iv_scan, R.id.bt_send})
     public void onClick(View v) {
@@ -50,7 +71,7 @@ public class SendActivity extends Activity {
                 finish();
                 break;
             case R.id.iv_scan:
-                startActivityForResult(new Intent(getApplicationContext(),QRCodeActivity.class),1);
+                startActivityForResult(new Intent(getApplicationContext(), QRCodeActivity.class), 1);
                 break;
             case R.id.bt_send:
                 send();
@@ -61,11 +82,68 @@ public class SendActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        Toast.makeText(this,"扫描成功",Toast.LENGTH_LONG).show();
+        Toast.makeText(this, "扫描成功", Toast.LENGTH_LONG).show();
 
     }
 
-    private void send(){
-        Toast.makeText(this,"发送",Toast.LENGTH_LONG).show();
+
+    private void initSendFrom() {
+        final String[] wallets = {"batman111", "superman111", "flash111", "aquaman111"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wallets);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_send_from.setAdapter(adapter);
+        spinner_send_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                Toast.makeText(getApplicationContext(), wallets[i] + "选中", Toast.LENGTH_LONG).show();
+                String url = "http://block.gxb.io/api/header/" + wallets[i];
+                Glide.with(getApplicationContext()).load(url).into(iv_send_from);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+    }
+
+    private void initSendTo() {
+        et_send_to.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                String url = "http://block.gxb.io/api/header/" + charSequence;
+                Glide.with(getApplicationContext()).load(url).into(iv_send_to);
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+            }
+        });
+
+        final String[] coins = {"GXS", "BTS", "AAA", "BBB"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, coins);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_send_to.setAdapter(adapter);
+        spinner_send_to.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
+    }
+
+    private void send() {
+        Toast.makeText(this, "发送", Toast.LENGTH_LONG).show();
     }
 }
