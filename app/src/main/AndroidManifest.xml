@@ -34,7 +34,8 @@
         <activity android:name=".Test.PagerActivity" />
         <activity android:name=".Activity.SendActivity" />
         <activity android:name=".Activity.ReciveActivity" />
-        <activity android:name=".Activity.GenerateWalletActivity"></activity>
+        <activity android:name=".Activity.GenerateWalletActivity" />
+        <activity android:name=".Activity.ImportWalletActivity"></activity>
     </application>
 
 </manifest>

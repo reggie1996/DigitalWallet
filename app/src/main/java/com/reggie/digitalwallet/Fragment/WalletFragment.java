@@ -16,6 +16,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
+import com.reggie.digitalwallet.Activity.GenerateWalletActivity;
+import com.reggie.digitalwallet.Activity.ImportWalletActivity;
 import com.reggie.digitalwallet.Activity.ReciveActivity;
 import com.reggie.digitalwallet.Activity.SendActivity;
 import com.reggie.digitalwallet.Model.Wallet;
@@ -80,9 +82,11 @@ public class WalletFragment extends BaseFragment {
                 break;
             case R.id.import_wallet:
                 Toast.makeText(getContext(),"导入钱包",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getContext(), ImportWalletActivity.class));
                 break;
             case R.id.new_wallet:
                 Toast.makeText(getContext(),"新建钱包",Toast.LENGTH_LONG).show();
+                startActivity(new Intent(getContext(), GenerateWalletActivity.class));
                 break;
         }
     }
