@@ -11,13 +11,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.afollestad.materialdialogs.DialogAction;
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
-import com.reggie.digitalwallet.Activity.GenerateWalletActivity;
-import com.reggie.digitalwallet.Activity.ImportWalletActivity;
 import com.reggie.digitalwallet.Activity.ReciveActivity;
 import com.reggie.digitalwallet.Activity.SendActivity;
 import com.reggie.digitalwallet.Model.Wallet;
@@ -81,12 +82,10 @@ public class WalletFragment extends BaseFragment {
                 tabSwitcher.toggleSwitcherVisibility();
                 break;
             case R.id.import_wallet:
-                Toast.makeText(getContext(),"导入钱包",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getContext(), ImportWalletActivity.class));
+                inportWallet();
                 break;
             case R.id.new_wallet:
-                Toast.makeText(getContext(),"新建钱包",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(getContext(), GenerateWalletActivity.class));
+                generateWallet();
                 break;
         }
     }
@@ -129,7 +128,6 @@ public class WalletFragment extends BaseFragment {
             findViewById(R.id.send_money).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "转账" + index, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getContext(), SendActivity.class));
                 }
             });
@@ -137,7 +135,6 @@ public class WalletFragment extends BaseFragment {
             findViewById(R.id.recive_money).setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Toast.makeText(getContext(), "收款" + index, Toast.LENGTH_LONG).show();
                     startActivity(new Intent(getContext(), ReciveActivity.class));
                 }
             });
@@ -159,6 +156,39 @@ public class WalletFragment extends BaseFragment {
         parameters.putParcelable("wallet", wallet);
         tab.setParameters(parameters);
         return tab;
+    }
+
+
+    private void generateWallet(){
+        boolean wrapInScrollView = true;
+        new MaterialDialog.Builder(mContext)
+                .title("创建钱包")
+                .customView(R.layout.dialog_generate_wallet, wrapInScrollView)
+                .positiveText("完成")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        View view = dialog.getCustomView();
+                        EditText et = view.findViewById(R.id.et_gen_wallet_name);
+                        Toast.makeText(getContext(),et.getText().toString(),Toast.LENGTH_LONG).show();
+                    }
+                })
+                .show();
+    }
+
+    private void inportWallet(){
+        boolean wrapInScrollView = true;
+        new MaterialDialog.Builder(mContext)
+                .title("导入钱包")
+                .customView(R.layout.dialog_import_wallet, wrapInScrollView)
+                .positiveText("完成")
+                .onPositive(new MaterialDialog.SingleButtonCallback() {
+                    @Override
+                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
+                        View view = dialog.getCustomView();
+                    }
+                })
+                .show();
     }
 
 
