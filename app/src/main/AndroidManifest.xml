@@ -33,7 +33,8 @@
         <activity android:name=".ArcFace.PermissionAcitivity" />
         <activity android:name=".Test.PagerActivity" />
         <activity android:name=".Activity.SendActivity" />
-        <activity android:name=".Activity.ReciveActivity"></activity>
+        <activity android:name=".Activity.ReciveActivity" />
+        <activity android:name=".Activity.GenerateWalletActivity"></activity>
     </application>
 
 </manifest>
