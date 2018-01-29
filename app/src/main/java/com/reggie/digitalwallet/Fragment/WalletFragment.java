@@ -164,7 +164,6 @@ public class WalletFragment extends BaseFragment {
         new MaterialDialog.Builder(mContext)
                 .title("创建钱包")
                 .customView(R.layout.dialog_generate_wallet, wrapInScrollView)
-                .positiveText("完成")
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
@@ -181,7 +180,6 @@ public class WalletFragment extends BaseFragment {
         new MaterialDialog.Builder(mContext)
                 .title("导入钱包")
                 .customView(R.layout.dialog_import_wallet, wrapInScrollView)
-                .positiveText("完成")
                 .onPositive(new MaterialDialog.SingleButtonCallback() {
                     @Override
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {

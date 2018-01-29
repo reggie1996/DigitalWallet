@@ -3,6 +3,7 @@ package com.reggie.digitalwallet.Adapter;
 import android.content.Context;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,10 +22,12 @@ import butterknife.ButterKnife;
 /**
  * Created by florentchampigny on 24/04/15.
  */
-public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> {
+public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> implements View.OnClickListener{
 
     List<News> newsList;
     Context mContext;
+
+    private OnItemClickListener mItemClickListener = null;
 
 
     public NewsRecyclerViewAdapter(Context context, List<News> newsList) {
@@ -42,6 +45,9 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_card_news, parent, false);
         ViewHolder vh = new ViewHolder(view);
+
+        view.setOnClickListener(this);
+
         return vh;
     }
 
@@ -52,6 +58,16 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
         holder.tv_news_date.setText(news.getDate());
         holder.tv_news_via.setText(news.getVia());
         Glide.with(mContext).load(news.getImageUrl()).into(holder.iv_news_image);
+        holder.itemView.setTag(position);
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        if (mItemClickListener != null) {
+            //注意这里使用getTag方法获取position
+            mItemClickListener.onItemClick(view,(int)view.getTag());
+        }
     }
 
 
@@ -72,4 +88,14 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
             ButterKnife.bind(this, view);
         }
     }
+
+
+    public interface OnItemClickListener {
+        void onItemClick(View view, int position);
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.mItemClickListener = listener;
+    }
+
 }

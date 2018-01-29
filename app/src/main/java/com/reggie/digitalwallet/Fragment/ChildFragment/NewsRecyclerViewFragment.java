@@ -1,5 +1,6 @@
 package com.reggie.digitalwallet.Fragment.ChildFragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
@@ -11,7 +12,9 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
+import com.reggie.digitalwallet.Activity.WebActivity;
 import com.reggie.digitalwallet.Model.News;
 import com.reggie.digitalwallet.R;
 
@@ -35,6 +38,7 @@ public class NewsRecyclerViewFragment extends Fragment {
 
     @BindView(R.id.recyclerView)
     RecyclerView mRecyclerView;
+    NewsRecyclerViewAdapter adapter;
 
     List<News> newsList;
 
@@ -72,6 +76,17 @@ public class NewsRecyclerViewFragment extends Fragment {
         mRecyclerView.setItemAnimator(new ScaleInAnimator());
         mRecyclerView.setHasFixedSize(true);
         mRecyclerView.addItemDecoration(new MaterialViewPagerHeaderDecorator());
-        mRecyclerView.setAdapter(new NewsRecyclerViewAdapter(getContext(),newsList));
+
+        adapter = new NewsRecyclerViewAdapter(getContext(),newsList);
+        mRecyclerView.setAdapter(adapter);
+        adapter.setOnItemClickListener(new NewsRecyclerViewAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(View view, int position) {
+                Toast.makeText(getContext(),position + "",Toast.LENGTH_LONG).show();
+                Intent intent = new Intent(getContext(), WebActivity.class);
+                intent.putExtra("webUrl",newsList.get(position).getWebUrl().toString());
+                startActivity(intent);
+            }
+        });
     }
 }

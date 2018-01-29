@@ -1,6 +1,7 @@
 package com.reggie.digitalwallet.Activity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebChromeClient;
@@ -10,6 +11,7 @@ import android.webkit.WebViewClient;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.just.agentweb.AgentWeb;
@@ -31,11 +33,16 @@ public class WebActivity extends Activity {
     @BindView(R.id.bt_exit)
     ImageButton bt_exit;
 
+    String webUrl;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_web);
         ButterKnife.bind(this);
+
+        Intent intent = getIntent();
+        webUrl = intent.getStringExtra("webUrl");
 
         //状态栏修改
         ImmersionBar.with(this)
@@ -61,12 +68,10 @@ public class WebActivity extends Activity {
                 .interceptUnkownScheme() //拦截找不到相关页面的Scheme
                 .createAgentWeb()//
                 .ready()
-                .go(getUrl());
+                .go(webUrl);
+        //Toast.makeText(this,webUrl,Toast.LENGTH_LONG).show();
     }
 
-    public String getUrl() {
-        return "https://token.im/posts/101?locale=zh-CN";
-    }
 
 
     private ChromeClientCallbackManager.ReceivedTitleCallback mCallback = new ChromeClientCallbackManager.ReceivedTitleCallback() {
