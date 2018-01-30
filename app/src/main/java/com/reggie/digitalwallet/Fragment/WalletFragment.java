@@ -11,18 +11,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
-import com.afollestad.materialdialogs.DialogAction;
-import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
 import com.reggie.digitalwallet.Activity.ReciveActivity;
 import com.reggie.digitalwallet.Activity.SendActivity;
 import com.reggie.digitalwallet.Model.Wallet;
 import com.reggie.digitalwallet.R;
+import com.reggie.digitalwallet.Utils.WalletUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -82,10 +79,10 @@ public class WalletFragment extends BaseFragment {
                 tabSwitcher.toggleSwitcherVisibility();
                 break;
             case R.id.import_wallet:
-                inportWallet();
+                WalletUtils.importWallet(mContext);
                 break;
             case R.id.new_wallet:
-                generateWallet();
+                WalletUtils.generateWallet(mContext);
                 break;
         }
     }
@@ -158,36 +155,6 @@ public class WalletFragment extends BaseFragment {
         return tab;
     }
 
-
-    private void generateWallet(){
-        boolean wrapInScrollView = true;
-        new MaterialDialog.Builder(mContext)
-                .title("创建钱包")
-                .customView(R.layout.dialog_generate_wallet, wrapInScrollView)
-                .onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        View view = dialog.getCustomView();
-                        EditText et = view.findViewById(R.id.et_gen_wallet_name);
-                        Toast.makeText(getContext(),et.getText().toString(),Toast.LENGTH_LONG).show();
-                    }
-                })
-                .show();
-    }
-
-    private void inportWallet(){
-        boolean wrapInScrollView = true;
-        new MaterialDialog.Builder(mContext)
-                .title("导入钱包")
-                .customView(R.layout.dialog_import_wallet, wrapInScrollView)
-                .onPositive(new MaterialDialog.SingleButtonCallback() {
-                    @Override
-                    public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
-                        View view = dialog.getCustomView();
-                    }
-                })
-                .show();
-    }
 
 
 }

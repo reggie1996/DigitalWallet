@@ -21,6 +21,7 @@ import com.reggie.digitalwallet.Fragment.MallFragment;
 import com.reggie.digitalwallet.Fragment.TrendFragment;
 import com.reggie.digitalwallet.Fragment.WalletFragment;
 import com.reggie.digitalwallet.R;
+import com.reggie.digitalwallet.Utils.WalletUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -132,10 +133,12 @@ public class MainActivity extends FragmentActivity {
                 Toast.makeText(this,"二维码",Toast.LENGTH_LONG).show();
                 break;
             case R.id.ll_menu_import_wallet:
-                Toast.makeText(this,"导入钱包",Toast.LENGTH_LONG).show();
+                WalletUtils.importWallet(this);
+                drawer.closeDrawers();
                 break;
             case R.id.ll_menu_create_wallet:
-                Toast.makeText(this,"创建钱包",Toast.LENGTH_LONG).show();
+                WalletUtils.generateWallet(this);
+                drawer.closeDrawers();
                 break;
             case R.id.ll_menu_wallet_manage:
                 break;

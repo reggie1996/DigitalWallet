@@ -6,8 +6,11 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
@@ -26,10 +29,13 @@ public class ReciveActivity extends Activity {
     ImageView iv_back;
     @BindView(R.id.et_recive_num)
     EditText et_recive_num;
-    @BindView(R.id.tv_recive_name)
-    TextView tv_recive_name;
     @BindView(R.id.iv_qrcode)
     ImageView iv_qrcode;
+    @BindView(R.id.spinner_recive_name)
+    Spinner spinner_recive_name;
+
+    private String account;
+    private String amount = "0";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +53,9 @@ public class ReciveActivity extends Activity {
 
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-                String message = charSequence + tv_recive_name.getText().toString();
+                amount = charSequence.toString();
+
+                String message = "qr://transfer?to=" + account +"&amount=" + amount;
                 Bitmap qrcode = QRCodeGenerator.createQRCode(message);
                 Glide.with(getApplicationContext())
                         .load(qrcode)
@@ -56,6 +64,29 @@ public class ReciveActivity extends Activity {
 
             @Override
             public void afterTextChanged(Editable editable) {
+
+            }
+
+        });
+
+
+        final String[] wallets = {"batman111", "superman111", "flash111", "aquaman111"};
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_spinner_item, wallets);
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner_recive_name.setAdapter(adapter);
+        spinner_recive_name.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+                account = wallets[i];
+                String message = "qr://transfer?to=" + account +"&amount=" + amount;
+                Bitmap qrcode = QRCodeGenerator.createQRCode(message);
+                Glide.with(getApplicationContext())
+                        .load(qrcode)
+                        .into(iv_qrcode);
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
 
             }
         });

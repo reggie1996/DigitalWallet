@@ -2,10 +2,10 @@ package com.reggie.digitalwallet.Activity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -25,6 +25,8 @@ import butterknife.OnClick;
 
 public class SendActivity extends Activity {
 
+    private static final int REQUSTCODE_SCAN_QRCODE = 1;
+
     protected ImmersionBar mImmersionBar;
     @BindView(R.id.iv_back)
     ImageView iv_back;
@@ -42,6 +44,12 @@ public class SendActivity extends Activity {
     EditText et_send_to;
     @BindView(R.id.spinner_send_to)
     Spinner spinner_send_to;
+    @BindView(R.id.et_amount)
+    EditText et_amount;
+
+    String to_name;
+    String amount;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -71,7 +79,7 @@ public class SendActivity extends Activity {
                 finish();
                 break;
             case R.id.iv_scan:
-                startActivityForResult(new Intent(getApplicationContext(), QRCodeActivity.class), 1);
+                startActivityForResult(new Intent(getApplicationContext(), QRCodeActivity.class), REQUSTCODE_SCAN_QRCODE);
                 break;
             case R.id.bt_send:
                 send();
@@ -82,6 +90,20 @@ public class SendActivity extends Activity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode) {
+            case REQUSTCODE_SCAN_QRCODE:
+                if (resultCode == 1) {
+                    String result = data.getStringExtra("result");
+
+                    Uri uri = Uri.parse(result);
+                    to_name = uri.getQueryParameter("to");
+                    amount = uri.getQueryParameter("amount");
+
+                    et_send_to.setText(to_name);
+                    et_amount.setText(amount);
+
+                }
+        }
         Toast.makeText(this, "扫描成功", Toast.LENGTH_LONG).show();
 
     }
