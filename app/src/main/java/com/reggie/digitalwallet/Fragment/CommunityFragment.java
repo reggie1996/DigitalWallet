@@ -1,15 +1,20 @@
 package com.reggie.digitalwallet.Fragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 
+import com.just.agentweb.IVideo;
+import com.reggie.digitalwallet.Activity.ConversationActivity;
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community1RecyclerViewFragment;
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community2RecyclerViewFragment;
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community3RecyclerViewFragment;
@@ -30,6 +35,13 @@ public class CommunityFragment extends BaseFragment {
 
     private List<String> list_title;
 
+    private DrawerLayout drawer;
+    private ImageView iv_community_friendlist;
+    private ImageView iv_community_message;
+    private View drawer_friendlist;
+
+    private View friend1;
+
     @Override
     protected View initView() {
         return null;
@@ -42,6 +54,11 @@ public class CommunityFragment extends BaseFragment {
 
         tablayout = view.findViewById(R.id.tablayout);
         viewpager = view.findViewById(R.id.viewpager);
+        drawer = view.findViewById(R.id.drawer);
+        iv_community_friendlist = view.findViewById(R.id.iv_community_friendlist);
+        iv_community_message = view.findViewById(R.id.iv_community_message);
+        drawer_friendlist = view.findViewById(R.id.drawer_friendlist);
+        friend1 = view.findViewById(R.id.friend1);
 
         list_title = new ArrayList<>();
         list_title.add("热门");
@@ -76,6 +93,27 @@ public class CommunityFragment extends BaseFragment {
 
         viewpager.setAdapter(adapter);
         tablayout.setupWithViewPager(viewpager);
+
+        iv_community_friendlist.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                drawer.openDrawer(drawer_friendlist);
+            }
+        });
+
+        iv_community_message.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+               drawer.openDrawer(drawer_friendlist);
+            }
+        });
+
+        friend1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), ConversationActivity.class));
+            }
+        });
 
         return view;
     }

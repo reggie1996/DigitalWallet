@@ -3,75 +3,96 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    tools:context="com.reggie.digitalwallet.Fragment.CommunityFragment"
-    android:fitsSystemWindows="true">
+    android:orientation="vertical">
+
     <Space
         android:layout_width="fill_parent"
         android:layout_height="20dp" />
 
 
-    <FrameLayout
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawer"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="match_parent">
 
-        <android.support.design.widget.TabLayout
-            android:id="@+id/tablayout"
-            android:fitsSystemWindows="true"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:tabIndicatorColor="@color/colorGold1"
-            app:tabTextColor="@color/black"
-            app:tabSelectedTextColor="@color/colorGold1"
-            app:tabTextAppearance="@style/titlestyle">
 
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="热门" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="关注" />
-
-            <android.support.design.widget.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="专家" />
-        </android.support.design.widget.TabLayout>
 
         <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="right|center"
-            android:orientation="horizontal"
-            android:layout_marginRight="15dp">
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.TabLayout
+                    android:id="@+id/tablayout"
+                    android:fitsSystemWindows="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tabIndicatorColor="@color/colorGold1"
+                    app:tabTextColor="@color/black"
+                    app:tabSelectedTextColor="@color/colorGold1"
+                    app:tabTextAppearance="@style/titlestyle">
+
+                    <android.support.design.widget.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="热门" />
+
+                    <android.support.design.widget.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="关注" />
+
+                    <android.support.design.widget.TabItem
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="专家" />
+                </android.support.design.widget.TabLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="right|center"
+                    android:orientation="horizontal"
+                    android:layout_marginRight="15dp">
 
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_weight="1"
-                android:scaleType="centerInside"
-                android:src="@mipmap/ic_message"
-                />
+                    <ImageView
+                        android:id="@+id/iv_community_message"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:scaleType="centerInside"
+                        android:src="@mipmap/ic_message"
+                        />
 
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="28dp"
-                android:layout_weight="1"
-                android:src="@mipmap/ic_friends"
-                android:scaleType="centerInside"
-                android:background="@null"/>
+                    <ImageView
+                        android:id="@+id/iv_community_friendlist"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:layout_weight="1"
+                        android:src="@mipmap/ic_friends"
+                        android:scaleType="centerInside"
+                        android:background="@null"/>
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
         </LinearLayout>
 
-    </FrameLayout>
+        <include layout="@layout/drawer_friendlist"
+            android:id="@+id/drawer_friendlist"/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    </android.support.v4.widget.DrawerLayout>
+
 
 
 </LinearLayout>

@@ -33,7 +33,6 @@ import jp.wasabeef.recyclerview.animators.ScaleInAnimator;
 
 public class Community1RecyclerViewFragment extends Fragment {
 
-    private static final int ITEM_COUNT = 20;
 
     @BindView(R.id.rv_community_child1)
     RecyclerView recyclerView;
