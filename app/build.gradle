@@ -85,6 +85,8 @@ dependencies {
     implementation 'com.afollestad.material-dialogs:core:0.9.6.0'
     //聊天气泡
     compile 'com.github.lguipeng:BubbleView:1.0.1'
+    //弹窗
+    compile 'com.example.zhouwei.library:library:1.0.0'
 }
 
 apply plugin: 'kotlin-android'

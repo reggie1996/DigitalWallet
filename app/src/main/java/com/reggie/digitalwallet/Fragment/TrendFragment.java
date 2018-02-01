@@ -10,16 +10,23 @@ import android.support.v4.view.ViewPager;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.example.zhouwei.library.CustomPopWindow;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
 import com.reggie.digitalwallet.Fragment.ChildFragment.NewsRecyclerViewFragment;
 import com.reggie.digitalwallet.Model.News;
-import com.reggie.digitalwallet.Test.TestData;
 import com.reggie.digitalwallet.R;
+import com.reggie.digitalwallet.Test.TestData;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import butterknife.BindView;
+import butterknife.OnClick;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -30,7 +37,7 @@ public class TrendFragment extends BaseFragment {
 
     MaterialViewPager materialViewPager;
     ViewPager viewPager;
-
+    ImageButton ib_menu;
 
 
     @Override
@@ -102,16 +109,16 @@ public class TrendFragment extends BaseFragment {
                 switch (page) {
                     case 0:
                         drawable = resources.getDrawable(R.drawable.bg_bitcoin);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 1:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 2:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 3:
                         drawable = resources.getDrawable(R.drawable.test);
-                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2,drawable);
+                        return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                 }
 
                 //execute others actions if needed (ex : modify your header logo)
@@ -123,6 +130,15 @@ public class TrendFragment extends BaseFragment {
         materialViewPager.getViewPager().setOffscreenPageLimit(materialViewPager.getViewPager().getAdapter().getCount());
         materialViewPager.getPagerTitleStrip().setViewPager(materialViewPager.getViewPager());
 
+        ib_menu = view.findViewById(R.id.ib_menu);
+        ib_menu.setClickable(true);
+        ib_menu.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                setIb_menu();
+            }
+        });
+
         return view;
     }
 
@@ -131,5 +147,11 @@ public class TrendFragment extends BaseFragment {
         super.onDestroyView();
     }
 
-
+    private void setIb_menu(){
+        Toast.makeText(getContext(),"!!!!!!",Toast.LENGTH_LONG).show();
+        CustomPopWindow popWindow = new CustomPopWindow.PopupWindowBuilder(getContext())
+                .setView(R.layout.item_conversation_self)//显示的布局
+                .create()//创建PopupWindow
+                .showAsDropDown(ib_menu,0,10);//显示PopupWindow
+    }
 }

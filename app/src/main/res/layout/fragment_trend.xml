@@ -35,7 +35,7 @@
         </com.github.florent37.materialviewpager.MaterialViewPager>
 
         <ImageButton
-            android:id="@+id/imageButton"
+            android:id="@+id/ib_menu"
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:scaleType="centerInside"
