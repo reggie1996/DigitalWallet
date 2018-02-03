@@ -168,6 +168,7 @@ public class TrendFragment extends BaseFragment {
                     case R.id.tv_add:
                         Toast.makeText(getContext(),"dsabduabsiuda",Toast.LENGTH_LONG).show();
                         break;
+
                 }
             }
         };
