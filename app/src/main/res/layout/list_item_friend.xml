@@ -22,7 +22,7 @@
             android:layout_marginLeft="15dp">
 
             <TextView
-                android:text="TextView"
+                android:text="好友名称"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/friend_name"
@@ -33,7 +33,7 @@
                 />
 
             <TextView
-                android:text="TextView"
+                android:text="最近消息..."
                 android:textSize="12sp"
                 android:textColor="#666666"
                 android:layout_gravity="right"

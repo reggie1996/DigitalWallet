@@ -56,7 +56,7 @@ public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerVi
         News news = newsList.get(position);
         holder.tv_news_title.setText(news.getTitle());
         holder.tv_news_date.setText(news.getDate());
-        holder.tv_news_via.setText(news.getVia());
+        holder.tv_news_via.setText("via: " + news.getVia());
         Glide.with(mContext).load(news.getImageUrl()).into(holder.iv_news_image);
         holder.itemView.setTag(position);
     }

@@ -95,7 +95,7 @@
                 android:layout_height="200dp"
                 android:layout_marginLeft="15dp"
                 android:layout_marginRight="15dp"
-                android:scaleType="centerInside"
+                android:scaleType="fitXY"
                 android:src="@mipmap/test"
                 />
             

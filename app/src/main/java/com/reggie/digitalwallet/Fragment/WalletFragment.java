@@ -146,7 +146,7 @@ public class WalletFragment extends BaseFragment {
         CharSequence title = getString(R.string.tab_title, index + 1);
         Tab tab = new Tab(title);
 
-        Wallet wallet = new Wallet("http://image11.m1905.cn/uploadfile/2012/0509/20120509110013368.jpg", "第一个钱包", 1000, "0xhudafshfuhdsjafhjshfjksf");
+        Wallet wallet = new Wallet("https://block.gxb.io/api/header/batman111", "第一个钱包", 1000, "0xhudafshfuhdsjafhjshfjksf");
         //用bundle传参数
         Bundle parameters = new Bundle();
         parameters.putInt(VIEW_TYPE_EXTRA, index % 2);

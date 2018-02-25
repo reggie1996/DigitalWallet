@@ -23,9 +23,14 @@ import com.youth.banner.loader.ImageLoader;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.microedition.khronos.opengles.GL;
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import jp.wasabeef.glide.transformations.BlurTransformation;
 import jp.wasabeef.recyclerview.animators.ScaleInAnimator;
+
+import static com.bumptech.glide.request.RequestOptions.bitmapTransform;
 
 /**
  * Created by 24073 on 2018/1/24.
@@ -51,26 +56,27 @@ public class Community1RecyclerViewFragment extends Fragment {
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         ButterKnife.bind(this, view);
+
         initData();
         initRecyclerView();
         initBanner();
     }
 
 
-    private void initData(){
+    private void initData() {
 
         bannerImages = new ArrayList<>();
-        bannerImages.add("http://120.79.17.123/static/img/crowdfunding2.jpg");
-        bannerImages.add("http://120.79.17.123/static/img/crowdfunding1.jpg");
-        bannerImages.add("http://image11.m1905.cn/uploadfile/2012/0509/20120509110013368.jpg");
-        bannerImages.add("http://www.mypcera.com/star/u1/2006/02/22/20060222134251391454.jpg");
+        bannerImages.add("https://pic4.zhimg.com/v2-24ef7d28e3fa22297016a9b997854a91_r.jpg");
+        bannerImages.add("https://pic4.zhimg.com/043a08fef8da21e474c519985042f3d2_r.jpg");
+        bannerImages.add("https://pic1.zhimg.com/80/v2-0b128c4d100f82e061c913e77f6836d9_hd.jpg");
+        bannerImages.add("https://pic4.zhimg.com/v2-24ef7d28e3fa22297016a9b997854a91_r.jpg");
 
         communityList = TestData.getCommunityData1();
 
     }
 
 
-    private void initBanner(){
+    private void initBanner() {
         banner_child1.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
@@ -83,8 +89,8 @@ public class Community1RecyclerViewFragment extends Fragment {
         banner_child1.start();
     }
 
-    private void initRecyclerView(){
-        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()){
+    private void initRecyclerView() {
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()) {
             @Override
             public boolean canScrollVertically() {
                 return false;
@@ -92,7 +98,7 @@ public class Community1RecyclerViewFragment extends Fragment {
         });
         recyclerView.setItemAnimator(new ScaleInAnimator());
         recyclerView.setHasFixedSize(true);
-        recyclerView.setAdapter(new CommunityRecyclerViewAdapter(getContext(),communityList));
+        recyclerView.setAdapter(new CommunityRecyclerViewAdapter(getContext(), communityList));
     }
 
 

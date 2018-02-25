@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="25dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="570dp"
         android:orientation="vertical">
 
         <TextView
@@ -44,16 +49,16 @@
             android:layout_height="40dp">
 
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/ic_wallet"
                 android:layout_margin="10dp"/>
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:scaleType="fitXY"
-                android:src="@mipmap/ic_launcher"
+                android:src="@mipmap/ic_wallet"
                 android:layout_margin="10dp"/>
 
             <EditText
@@ -79,4 +84,4 @@
 
 
 
-</FrameLayout>
+</LinearLayout>

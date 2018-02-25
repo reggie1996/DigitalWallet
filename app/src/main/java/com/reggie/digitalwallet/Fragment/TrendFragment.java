@@ -69,8 +69,8 @@ public class TrendFragment extends BaseFragment {
 
         fragments = new ArrayList<>();
         fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
-        fragments.add(NewsRecyclerViewFragment.newInstance(newslist2));
-        fragments.add(NewsRecyclerViewFragment.newInstance(newslist3));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
         fragments.add(NewsRecyclerViewFragment.newInstance(newslist4));
 
 
@@ -91,11 +91,11 @@ public class TrendFragment extends BaseFragment {
                     case 0:
                         return "热门";
                     case 1:
-                        return "比特币";
+                        return "公信宝";
                     case 2:
-                        return "以太币";
+                        return "BTS";
                     case 3:
-                        return "莱特币";
+                        return "Steemit";
                 }
                 return "";
             }
@@ -109,13 +109,13 @@ public class TrendFragment extends BaseFragment {
                 Drawable drawable;
                 switch (page) {
                     case 0:
-                        drawable = resources.getDrawable(R.drawable.bg_bitcoin);
+                        drawable = resources.getDrawable(R.drawable.trendbg1);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 1:
-                        drawable = resources.getDrawable(R.drawable.test);
+                        drawable = resources.getDrawable(R.drawable.trendbg1);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 2:
-                        drawable = resources.getDrawable(R.drawable.test);
+                        drawable = resources.getDrawable(R.drawable.trendbg1);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 3:
                         drawable = resources.getDrawable(R.drawable.test);
