@@ -87,6 +87,10 @@ dependencies {
     compile 'com.github.lguipeng:BubbleView:1.0.1'
     //弹窗
     compile 'com.example.zhouwei.library:library:1.0.0'
+    implementation project(':kchartlib')
+
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'org.apache.httpcomponents:httpcore:4.4.4'
 }
 
 apply plugin: 'kotlin-android'

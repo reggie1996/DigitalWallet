@@ -1,1 +1,1 @@
-include ':app', ':library-walletdisplay'
+include ':app', ':library-walletdisplay', ':kchartlib'

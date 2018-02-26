@@ -34,6 +34,7 @@
         <activity android:name=".Test.PagerActivity" />
         <activity android:name=".Activity.SendActivity" />
         <activity android:name=".Activity.ReciveActivity" />
+        <activity android:name=".KChart.LoadMoreActivity" />
         <activity android:name=".Activity.ConversationActivity"></activity>
     </application>
 

@@ -17,6 +17,8 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.reggie.digitalwallet.Activity.ReciveActivity;
 import com.reggie.digitalwallet.Activity.SendActivity;
+import com.reggie.digitalwallet.KChart.ExampleActivity;
+import com.reggie.digitalwallet.KChart.LoadMoreActivity;
 import com.reggie.digitalwallet.Model.Wallet;
 import com.reggie.digitalwallet.R;
 import com.reggie.digitalwallet.Utils.WalletUtils;
@@ -111,7 +113,7 @@ public class WalletFragment extends BaseFragment {
                               @Nullable final Bundle savedInstanceState) {
             Wallet wallet = tab.getParameters().getParcelable("wallet");
 
-            CircleImageView head = findViewById(R.id.iv_wallet_head);
+            ImageView head = findViewById(R.id.iv_wallet_head);
             TextView name = findViewById(R.id.tv_wallet_name);
             TextView balance = findViewById(R.id.tv_wallet_balance);
             TextView pk = findViewById(R.id.tv_wallet_pk);
@@ -120,6 +122,16 @@ public class WalletFragment extends BaseFragment {
             name.setText(wallet.getName());
             balance.setText(wallet.getBalance() + "");
             pk.setText(wallet.getPk());
+
+            ImageView trend = findViewById(R.id.iv_trend);
+            trend.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.setClass(getContext(),LoadMoreActivity.class);
+                    startActivity(intent);
+                }
+            });
 
             //转账
             findViewById(R.id.send_money).setOnClickListener(new View.OnClickListener() {
