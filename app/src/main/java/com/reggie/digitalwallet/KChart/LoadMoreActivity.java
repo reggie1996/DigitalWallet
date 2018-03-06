@@ -5,12 +5,14 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.Window;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 
 import com.github.tifezh.kchartlib.chart.BaseKChartView;
 import com.github.tifezh.kchartlib.chart.KChartView;
 import com.github.tifezh.kchartlib.chart.formatter.DateFormatter;
+import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.KChart.chart.KChartAdapter;
 import com.reggie.digitalwallet.KChart.chart.KLineEntity;
 import com.reggie.digitalwallet.R;
@@ -33,11 +35,16 @@ public class LoadMoreActivity extends AppCompatActivity implements KChartView.KC
     RelativeLayout mTitleView;
     private KChartAdapter mAdapter;
 
+    protected ImmersionBar mImmersionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_example_light);
         ButterKnife.bind(this);
+
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.statusBarDarkFont(true).init();
         initView();
         initData();
     }

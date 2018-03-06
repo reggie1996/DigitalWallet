@@ -2,6 +2,7 @@ package com.reggie.digitalwallet.Test;
 
 import com.reggie.digitalwallet.Model.Community;
 import com.reggie.digitalwallet.Model.News;
+import com.reggie.digitalwallet.Model.Specialist;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -85,6 +86,22 @@ public class TestData {
         communityList.add(community5);
 
         return communityList;
+    }
+
+
+    public static List<Specialist> getSpecialistData(){
+        List<Specialist> specialists = new ArrayList<>();
+        Specialist specialist1 = new Specialist("专家1","简介1", 10,"https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=1593150165,3335242820&fm=27&gp=0.jpg");
+        Specialist specialist2 = new Specialist("专家1","简介1", 10,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520356663586&di=ddfcd1406aa59ef0c30be93b5f9a4270&imgtype=jpg&src=http%3A%2F%2Fimg4.imgtn.bdimg.com%2Fit%2Fu%3D2620668064%2C2727905968%26fm%3D214%26gp%3D0.jpg");
+        Specialist specialist3 = new Specialist("专家1","简介1", 10,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520356605937&di=894ecb70a667d29fd95cc4fe50426ab7&imgtype=0&src=http%3A%2F%2Fwsb.cdsu.edu.cn%2F_data%2F2013%2F10%2F16%2F5f25ff49_ea3c_49e5_bffb_5e7c8ad0a858%2Fimages%2F435192010162653_1.gif");
+        Specialist specialist4 = new Specialist("专家1","简介1", 10,"https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1520356755794&di=b1e62c97c4096ce3f129dfbce1743439&imgtype=0&src=http%3A%2F%2Fwww.hprc.org.cn%2Fleidaxinxi%2Fgfjswj%2F201311%2FW020131114288079631737.jpg");
+
+        specialists.add(specialist1);
+        specialists.add(specialist2);
+        specialists.add(specialist3);
+        specialists.add(specialist4);
+
+        return specialists;
     }
 
 }

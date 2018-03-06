@@ -32,8 +32,8 @@
                 android:id="@+id/topic1">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:src="@drawable/ic_topic_hot"
                     android:id="@+id/imageView4"
@@ -42,7 +42,7 @@
 
                 <TextView
                     android:text="# 比特币 #"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:textColor="#ffffff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -66,8 +66,8 @@
                 android:layout_weight="1">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:src="@drawable/ic_topic_hot"
                     android:layout_weight="0.09"
@@ -75,7 +75,7 @@
 
                 <TextView
                     android:text="# 公信宝 #"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:textColor="#ffffff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -105,8 +105,8 @@
                 android:layout_height="44dp">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:src="@drawable/ic_topic_hot"
                     android:layout_weight="0.09"
@@ -114,7 +114,7 @@
 
                 <TextView
                     android:text="# 以太坊 #"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:textColor="#ffffff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -137,8 +137,8 @@
                 android:layout_weight="1">
 
                 <ImageView
-                    android:layout_width="35dp"
-                    android:layout_height="35dp"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
                     android:layout_gravity="center_horizontal|center_vertical"
                     android:src="@drawable/ic_topic_new"
                     android:layout_weight="0.09"
@@ -146,7 +146,7 @@
 
                 <TextView
                     android:text="  更多热门话题"
-                    android:textSize="15dp"
+                    android:textSize="13dp"
                     android:textColor="#ffffff"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

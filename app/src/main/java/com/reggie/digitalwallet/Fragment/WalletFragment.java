@@ -157,8 +157,21 @@ public class WalletFragment extends BaseFragment {
     private Tab createTab(final int index) {
         CharSequence title = getString(R.string.tab_title, index + 1);
         Tab tab = new Tab(title);
-
-        Wallet wallet = new Wallet("https://block.gxb.io/api/header/batman111", "第一个钱包", 1000, "0xhudafshfuhdsjafhjshfjksf");
+        Wallet wallet = null;
+        switch (index){
+            case 0:
+                wallet  = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 1000, "备份私钥");
+                break;
+            case 1:
+                wallet  = new Wallet("https://block.gxb.io/api/header/superman111", "superman111", 0, "备份私钥");
+                break;
+            case 2:
+                wallet  = new Wallet("https://block.gxb.io/api/header/flash111", "flash111", 0, "备份私钥");
+                break;
+            default:
+                wallet  = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 1000, "备份私钥");
+                break;
+        }
         //用bundle传参数
         Bundle parameters = new Bundle();
         parameters.putInt(VIEW_TYPE_EXTRA, index % 2);
