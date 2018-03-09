@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="C:\Users\Public\DEMO\graphenej\graphenej\src\main\assets"/><source path="C:\Users\Public\DEMO\graphenej\graphenej\build\generated\assets\shaders\debug"/></dataSet><dataSet config="debug"><source path="C:\Users\Public\DEMO\graphenej\graphenej\src\debug\assets"/></dataSet></merger>
