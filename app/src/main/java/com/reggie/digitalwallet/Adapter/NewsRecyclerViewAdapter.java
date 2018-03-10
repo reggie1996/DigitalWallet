@@ -20,7 +20,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by florentchampigny on 24/04/15.
+ *
  */
 public class NewsRecyclerViewAdapter extends RecyclerView.Adapter<NewsRecyclerViewAdapter.ViewHolder> implements View.OnClickListener{
 

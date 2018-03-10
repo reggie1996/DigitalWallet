@@ -170,7 +170,7 @@ public class MainActivity extends FragmentActivity {
         public void onCheckedChanged(RadioGroup group, int checkedId) {
             switch (checkedId) {
                 case R.id.rb_wallet:
-                    mImmersionBar.transparentBar().statusBarDarkFont(true).init();
+                    mImmersionBar.barColor(R.color.colorGold2).statusBarDarkFont(false).init();
                     position = 0;
                     break;
                 case R.id.rb_trend:
@@ -182,7 +182,7 @@ public class MainActivity extends FragmentActivity {
                     position = 2;
                     break;
                 case R.id.rb_mall:
-                    mImmersionBar.statusBarDarkFont(true).init();
+                    mImmersionBar.barColor(R.color.colorWhite).statusBarDarkFont(true).init();
                     position = 3;
                     break;
                 default:
