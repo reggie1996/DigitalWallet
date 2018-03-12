@@ -117,7 +117,7 @@ public class SendActivity extends Activity {
         spinner_send_from.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(getApplicationContext(), wallets[i] + "选中", Toast.LENGTH_LONG).show();
+                //Toast.makeText(getApplicationContext(), wallets[i] + "选中", Toast.LENGTH_LONG).show();
                 String url = "http://block.gxb.io/api/header/" + wallets[i];
                 Glide.with(getApplicationContext()).load(url).into(iv_send_from);
             }

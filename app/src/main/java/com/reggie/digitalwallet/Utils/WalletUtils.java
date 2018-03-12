@@ -3,6 +3,7 @@ package com.reggie.digitalwallet.Utils;
 import android.content.Context;
 import android.support.annotation.NonNull;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -17,7 +18,7 @@ import com.reggie.digitalwallet.R;
 public class WalletUtils {
 
 
-    public static void generateWallet(Context context){
+    public static void generateWallet(final Context context){
         boolean wrapInScrollView = true;
         new MaterialDialog.Builder(context)
                 .title("创建钱包")
@@ -27,7 +28,6 @@ public class WalletUtils {
                     public void onClick(@NonNull MaterialDialog dialog, @NonNull DialogAction which) {
                         View view = dialog.getCustomView();
                         EditText et = view.findViewById(R.id.et_gen_wallet_name);
-
                     }
                 })
                 .show();

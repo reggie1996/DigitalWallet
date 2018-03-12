@@ -109,16 +109,16 @@ public class TrendFragment extends BaseFragment {
                 Drawable drawable;
                 switch (page) {
                     case 0:
-                        drawable = resources.getDrawable(R.drawable.trendbg1);
+                        drawable = resources.getDrawable(R.drawable.trend_bg);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 1:
-                        drawable = resources.getDrawable(R.drawable.trendbg1);
+                        drawable = resources.getDrawable(R.drawable.trend_bg);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 2:
-                        drawable = resources.getDrawable(R.drawable.trendbg1);
+                        drawable = resources.getDrawable(R.drawable.trend_bg);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                     case 3:
-                        drawable = resources.getDrawable(R.drawable.test);
+                        drawable = resources.getDrawable(R.drawable.trend_bg);
                         return HeaderDesign.fromColorResAndDrawable(R.color.colorGold2, drawable);
                 }
 

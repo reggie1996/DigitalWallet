@@ -182,7 +182,7 @@ public class MainActivity extends FragmentActivity {
                     position = 2;
                     break;
                 case R.id.rb_mall:
-                    mImmersionBar.barColor(R.color.colorWhite).statusBarDarkFont(true).init();
+                    mImmersionBar.barColor(R.color.colorGold2).statusBarDarkFont(false).init();
                     position = 3;
                     break;
                 default:

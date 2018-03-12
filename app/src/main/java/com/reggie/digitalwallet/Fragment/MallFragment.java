@@ -58,6 +58,13 @@ public class MallFragment extends BaseFragment {
         Glide.with(this).load(R.mipmap.store3).into(iv_store3);
         Glide.with(this).load(R.mipmap.store4).into(iv_store4);
         Glide.with(this).load(R.mipmap.store5).into(iv_store5);
+
+        iv_mall1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+            }
+        });
     }
 
 }
