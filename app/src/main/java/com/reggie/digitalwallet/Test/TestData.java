@@ -1,8 +1,10 @@
 package com.reggie.digitalwallet.Test;
 
 import com.reggie.digitalwallet.Model.Community;
+import com.reggie.digitalwallet.Model.Goods;
 import com.reggie.digitalwallet.Model.News;
 import com.reggie.digitalwallet.Model.Specialist;
+import com.reggie.digitalwallet.R;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,6 +104,30 @@ public class TestData {
         specialists.add(specialist4);
 
         return specialists;
+    }
+
+    public static List<Goods> getGoodsData(){
+        List<Goods> goodsList = new ArrayList<>();
+        Goods goods1 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods1, 20);
+        Goods goods2 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods2, 20);
+        Goods goods3 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods3, 20);
+        Goods goods4 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods4, 20);
+        Goods goods5 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods5, 20);
+        Goods goods6 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods6, 20);
+        Goods goods7 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods7, 20);
+        Goods goods8 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods8, 20);
+
+        goodsList.add(goods1);
+        goodsList.add(goods2);
+        goodsList.add(goods3);
+        goodsList.add(goods4);
+        goodsList.add(goods5);
+        goodsList.add(goods6);
+        goodsList.add(goods7);
+        goodsList.add(goods8);
+
+        return goodsList;
+
     }
 
 }

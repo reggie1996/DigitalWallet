@@ -16,14 +16,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Activity.MainActivity" />
-        <activity android:name=".Test.TestActivity">
+        <activity android:name=".Activity.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Test.TestActivity"/>
         <activity android:name=".Activity.QRCodeActivity" />
         <activity android:name=".Test.SFZActivity" />
         <activity android:name=".Activity.WebActivity" />
@@ -38,7 +38,9 @@
             android:name=".KChart.LoadMoreActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity android:name=".Activity.ConversationActivity" />
-        <activity android:name=".Activity.SpecialistActivity"></activity>
+        <activity android:name=".Activity.SpecialistActivity" />
+        <activity android:name=".Activity.GoodsListActivity" />
+        <activity android:name=".Activity.GoodsActivity"></activity>
     </application>
 
 </manifest>
