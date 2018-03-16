@@ -4,7 +4,7 @@ android {
     compileSdkVersion 26
     defaultConfig {
         applicationId "com.reggie.digitalwallet"
-        minSdkVersion 21
+        minSdkVersion 23
         targetSdkVersion 26
         versionCode 1
         versionName "1.0"
@@ -91,6 +91,10 @@ dependencies {
 
     compile 'com.google.code.gson:gson:2.7'
     compile 'org.apache.httpcomponents:httpcore:4.4.4'
+
+    //时间选择
+    compile 'com.borax12.materialdaterangepicker:library:1.9'
+
 }
 
 apply plugin: 'kotlin-android'

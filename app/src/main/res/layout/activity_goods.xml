@@ -1,9 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.reggie.digitalwallet.Activity.GoodsActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="20dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:padding="10dp"
+        android:gravity="center_vertical">
+
+        <ImageView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="大疆 晓 无人机"
+            android:textSize="16dp"
+            android:textColor="@color/colorGold1"
+            android:layout_marginLeft="10dp"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/colorGray"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <com.youth.banner.Banner
+                android:id="@+id/banner"
+                android:layout_width="match_parent"
+                android:layout_height="250dp" >
+
+            </com.youth.banner.Banner>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#e5e5e5"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
+
+                <TextView
+                    android:id="@+id/textView5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="26dp"
+                    android:text="大疆 晓 无人机 (单机版)"
+                    android:textColor="@color/black"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:id="@+id/textView6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView5"
+                    android:layout_below="@+id/textView5"
+                    android:text="20GXS/天"
+                    android:textColor="@color/red"
+                    android:textSize="20dp" />
+
+                <TextView
+                    android:id="@+id/textView7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/textView6"
+                    android:layout_alignBottom="@+id/textView6"
+                    android:layout_alignEnd="@+id/buttonFlat2"
+                    android:text="租赁时间越长 日租金越低"
+                    android:textColor="@color/red" />
+
+                <View
+                    android:id="@+id/view2"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/textView7"
+                    android:layout_marginTop="15dp"
+                    android:background="#e5e5e5" />
+                -->
+
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/buttonflat"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@+id/textView6"
+                    android:layout_below="@+id/view2"
+                    android:background="@color/colorGold1"
+                    android:text="周租(7天) 100GXS" />
+
+                <com.gc.materialdesign.views.ButtonFlat
+                    android:id="@+id/buttonFlat2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignBaseline="@+id/buttonflat"
+                    android:layout_alignBottom="@+id/buttonflat"
+                    android:layout_marginStart="13dp"
+                    android:layout_toEndOf="@+id/buttonflat"
+                    android:background="@color/colorGold1"
+                    android:text="月租(30天) 1000GXS" />
+
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#e5e5e5"/>
+
+            <include layout="@layout/layout_time_picker"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#e5e5e5"/>
+
+            <com.gc.materialdesign.views.ButtonFlat
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentTop="true"
+                android:background="@color/colorGold1"
+                android:gravity="center"
+                android:text="立即租用"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="5dp"
+                android:background="#e5e5e5"/>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp">
+
+                <View
+                    android:layout_width="10dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/colorGold2"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="商品详情"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="15dp"
+                    android:textColor="@color/colorGold1"/>
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/iv_detail"
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+                android:background="@color/white"/>
+
+            <ImageView
+                android:id="@+id/iv_detail2"
+                android:layout_width="match_parent"
+                android:layout_height="650dp"
+                android:background="@color/white"/>
+
+
+
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="#e5e5e5"/>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+
+</LinearLayout>

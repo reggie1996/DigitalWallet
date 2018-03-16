@@ -108,14 +108,14 @@ public class TestData {
 
     public static List<Goods> getGoodsData(){
         List<Goods> goodsList = new ArrayList<>();
-        Goods goods1 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods1, 20);
-        Goods goods2 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods2, 20);
-        Goods goods3 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods3, 20);
-        Goods goods4 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods4, 20);
-        Goods goods5 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods5, 20);
-        Goods goods6 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods6, 20);
-        Goods goods7 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods7, 20);
-        Goods goods8 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods8, 20);
+        Goods goods1 = new Goods("大疆 晓 掌上无人机", R.mipmap.goods1, (float)0.82);
+        Goods goods2 = new Goods("奥林巴斯TG-5", R.mipmap.goods2, (float)0.73);
+        Goods goods3 = new Goods("理光GR2", R.mipmap.goods3, (float)0.66);
+        Goods goods4 = new Goods("insta360 nano", R.mipmap.goods4, (float)0.81);
+        Goods goods5 = new Goods("佳能600D入门单反", R.mipmap.goods5, (float)0.87);
+        Goods goods6 = new Goods("佳能700D单反", R.mipmap.goods6, (float)0.72);
+        Goods goods7 = new Goods("佳能EOS M6 微型相机", R.mipmap.goods7, (float)0.12);
+        Goods goods8 = new Goods("佳能EOS 5D Mark IV", R.mipmap.goods8, (float)0.90);
 
         goodsList.add(goods1);
         goodsList.add(goods2);
