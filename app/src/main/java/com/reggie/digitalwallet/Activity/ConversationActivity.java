@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,6 +22,10 @@ public class ConversationActivity extends Activity {
     TextView tv_send;
 
     protected ImmersionBar mImmersionBar;
+    @BindView(R.id.ll_first)
+    LinearLayout ll_first;
+    @BindView(R.id.ll_sec)
+    LinearLayout ll_sec;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,12 +34,20 @@ public class ConversationActivity extends Activity {
         ButterKnife.bind(this);
 
         mImmersionBar = ImmersionBar.with(this);
-        mImmersionBar.barColor(R.color.colorGold1).statusBarDarkFont(false).init();
+        mImmersionBar.keyboardEnable(true).barColor(R.color.colorGold1).statusBarDarkFont(false).init();
 
         tv_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast.makeText(getApplicationContext(),"发送",Toast.LENGTH_LONG).show();
+                et_message.setText("");
+                ll_first.setVisibility(View.VISIBLE);
+            }
+        });
+        tv_send.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                ll_sec.setVisibility(View.VISIBLE);
+                return true;
             }
         });
     }

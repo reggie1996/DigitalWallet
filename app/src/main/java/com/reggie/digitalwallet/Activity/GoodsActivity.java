@@ -2,6 +2,7 @@ package com.reggie.digitalwallet.Activity;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.icu.util.Calendar;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 
 import com.borax12.materialdaterangepicker.date.DatePickerDialog;
 import com.bumptech.glide.Glide;
+import com.gc.materialdesign.views.ButtonFlat;
 import com.gc.materialdesign.views.ButtonRectangle;
 import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.R;
@@ -51,6 +53,8 @@ public class GoodsActivity extends Activity implements DatePickerDialog.OnDateSe
     ImageView iv_detail2;
     @BindView(R.id.back)
     ImageView back;
+    @BindView(R.id.bt_order)
+    ButtonFlat bt_order;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,9 +66,10 @@ public class GoodsActivity extends Activity implements DatePickerDialog.OnDateSe
         mImmersionBar.barColor(R.color.colorGold1).statusBarDarkFont(false).init();
 
         bannerImages = new ArrayList();
-        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/Vlnn5igtcnEL3axLo1SzMGkJ2jUUkJjiZv.Qr3F6FTI!/b/dEUBAAAAAAAA");
-        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/imEGpYqHjPYQQ8jxLLjx.5E86k96HB5m6U8HNkMJyiA!/b/dAQBAAAAAAAA");
-        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/Sa4KEyVOSnmUwvF8Fm7EdzchKJ5ewce1eVyf63riSo4!/b/dGgBAAAAAAAA");
+        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/9Pm6fyfyvbih7uk90r5CP5102GEqGwlSDjnLXGYxebQ!/b/dFsBAAAAAAAA");
+        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/ANk9sQ8l2zDcc4ggtfPUlzLMeD21tuD8IIdvs4Hdr4Y!/b/dEABAAAAAAAA");
+        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/rfmwHCNock87gqfXf4huPXh0xN4phaxAzV.JOnKITeM!/b/dAgBAAAAAAAA");
+        bannerImages.add("http://m.qpic.cn/psb?/V121cQJl2i1o9n/GepuRCUo*ZoIHi5InRNfIPXP6ycJ1qYtG*riRe9N6yI!/b/dEUBAAAAAAAA");
         banner.setImageLoader(new ImageLoader() {
             @Override
             public void displayImage(Context context, Object path, ImageView imageView) {
@@ -104,7 +109,7 @@ public class GoodsActivity extends Activity implements DatePickerDialog.OnDateSe
 
     }
 
-    @OnClick({R.id.tv_select_time, R.id.tv_start_year, R.id.tv_start_month, R.id.tv_start_day, R.id.tv_end_year, R.id.tv_end_month, R.id.tv_end_day, R.id.back})
+    @OnClick({R.id.tv_select_time, R.id.tv_start_year, R.id.tv_start_month, R.id.tv_start_day, R.id.tv_end_year, R.id.tv_end_month, R.id.tv_end_day, R.id.back, R.id.bt_order})
     public void onClick(View v) {
         switch (v.getId()) {
             default:
@@ -122,6 +127,9 @@ public class GoodsActivity extends Activity implements DatePickerDialog.OnDateSe
                 break;
             case R.id.back:
                 finish();
+                break;
+            case R.id.bt_order:
+                startActivity(new Intent(this,OrderGoodsActivity.class));
                 break;
         }
     }

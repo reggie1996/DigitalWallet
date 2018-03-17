@@ -142,6 +142,7 @@
                 android:background="#e5e5e5"/>
 
             <com.gc.materialdesign.views.ButtonFlat
+                android:id="@+id/bt_order"
                 android:layout_width="match_parent"
                 android:layout_height="50dp"
                 android:layout_alignParentTop="true"
