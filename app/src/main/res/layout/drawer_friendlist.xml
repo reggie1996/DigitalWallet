@@ -33,10 +33,216 @@
 
             <include layout="@layout/list_item_friend"
                 android:id="@+id/friend1"/>
-            <include layout="@layout/list_item_friend"/>
-            <include layout="@layout/list_item_friend"/>
-            <include layout="@layout/list_item_friend"/>
 
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="10dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp">
+                        <TextView
+                            android:text="尼古拉斯"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/black"
+                            android:typeface="sans" />
+                        <TextView
+                            android:text="早上好啊我..."
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:typeface="sans"/>
+                    </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_gravity="end"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/ic_headportrait1"
+                        app:civ_border_color="@color/colorGold3"
+                        app:civ_border_width="1dp" />
+                </FrameLayout>
+                <View
+                    android:layout_width="300dp"
+                    android:layout_height="0.2dp"
+                    android:layout_gravity="right"
+                    android:background="@color/colorGold2"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="10dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp">
+                        <TextView
+                            android:text="QQ小冰"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/black"
+                            android:typeface="sans" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="right"
+                            android:text="好的"
+                            android:textColor="#666666"
+                            android:textSize="12sp"
+                            android:typeface="sans" />
+                    </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_gravity="end"
+                        android:id="@+id/profile_image"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/ic_headportrait3"
+                        app:civ_border_color="@color/colorGold3"
+                        app:civ_border_width="1dp" />
+                </FrameLayout>
+                <View
+                    android:layout_width="300dp"
+                    android:layout_height="0.2dp"
+                    android:layout_gravity="right"
+                    android:background="@color/colorGold2"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="10dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp">
+                        <TextView
+                            android:text="脸哥"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/black"
+                            android:typeface="sans" />
+                        <TextView
+                            android:text="晚上到我加吃饭"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:typeface="sans"/>
+                    </LinearLayout>
+
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_gravity="end"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/ic_headportrait2"
+                        app:civ_border_color="@color/colorGold3"
+                        app:civ_border_width="1dp" />
+                </FrameLayout>
+                <View
+                    android:layout_width="300dp"
+                    android:layout_height="0.2dp"
+                    android:layout_gravity="right"
+                    android:background="@color/colorGold2"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:paddingTop="3dp"
+                android:paddingBottom="3dp"
+                android:paddingRight="10dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="100dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp">
+                        <TextView
+                            android:text="土豆哥"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/friend_name"
+                            android:textSize="18sp"
+                            android:layout_marginBottom="5dp"
+                            android:textColor="@color/black"
+                            android:typeface="sans" />
+                        <TextView
+                            android:text="告辞！"
+                            android:textSize="12sp"
+                            android:textColor="#666666"
+                            android:layout_gravity="right"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/friend_id"
+                            android:typeface="sans"/>
+                    </LinearLayout>
+                    <de.hdodenhof.circleimageview.CircleImageView
+                        android:layout_gravity="end"
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/ic_headportrait5"
+                        app:civ_border_color="@color/colorGold3"
+                        app:civ_border_width="1dp" />
+                </FrameLayout>
+                <View
+                    android:layout_width="300dp"
+                    android:layout_height="0.2dp"
+                    android:layout_gravity="right"
+                    android:background="@color/colorGold2"
+                    android:layout_marginTop="5dp"/>
+            </LinearLayout>
 
         </LinearLayout>
     </ScrollView>
