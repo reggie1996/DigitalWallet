@@ -1,6 +1,7 @@
 package com.reggie.digitalwallet.Fragment;
 
 
+import android.content.Intent;
 import android.content.res.Resources;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import com.example.zhouwei.library.CustomPopWindow;
 import com.github.florent37.materialviewpager.MaterialViewPager;
 import com.github.florent37.materialviewpager.header.HeaderDesign;
+import com.reggie.digitalwallet.Activity.TrendItemsActivity;
 import com.reggie.digitalwallet.Fragment.ChildFragment.NewsRecyclerViewFragment;
 import com.reggie.digitalwallet.Model.News;
 import com.reggie.digitalwallet.R;
@@ -136,7 +138,7 @@ public class TrendFragment extends BaseFragment {
         ib_menu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setIb_menu();
+                startActivity(new Intent(getContext(), TrendItemsActivity.class));
             }
         });
 
@@ -148,31 +150,5 @@ public class TrendFragment extends BaseFragment {
         super.onDestroyView();
     }
 
-    private void setIb_menu(){
-        View contentView = LayoutInflater.from(getContext()).inflate(R.layout.item_popup,null);
-        handleLogic(contentView);
-        popWindow = new CustomPopWindow.PopupWindowBuilder(getContext())
-                .setView(R.layout.item_popup)//显示的布局
-                .create()//创建PopupWindow
-                .showAsDropDown(ib_menu,0,10);//显示PopupWindow
-    }
-
-    private void handleLogic(View contentView){
-        View.OnClickListener listener = new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if(popWindow!=null){
-                    popWindow.dissmiss();
-                }
-                switch (v.getId()){
-                    case R.id.tv_add:
-                        Toast.makeText(getContext(),"dsabduabsiuda",Toast.LENGTH_LONG).show();
-                        break;
-
-                }
-            }
-        };
-        contentView.findViewById(R.id.tv_add).setOnClickListener(listener);
-    }
 
 }

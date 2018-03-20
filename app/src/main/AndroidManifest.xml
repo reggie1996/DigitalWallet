@@ -37,12 +37,14 @@
         <activity
             android:name=".KChart.LoadMoreActivity"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
-        <activity android:name=".Activity.ConversationActivity"
-            android:windowSoftInputMode="adjustPan"  />
+        <activity
+            android:name=".Activity.ConversationActivity"
+            android:windowSoftInputMode="adjustPan" />
         <activity android:name=".Activity.SpecialistActivity" />
         <activity android:name=".Activity.GoodsListActivity" />
         <activity android:name=".Activity.GoodsActivity" />
-        <activity android:name=".Activity.OrderGoodsActivity"></activity>
+        <activity android:name=".Activity.OrderGoodsActivity" />
+        <activity android:name=".Activity.TrendItemsActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textSize="20dp"
-        android:text="添加"/>
+        android:text="添加"
+        android:background="@color/white"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="2dp"
+        android:paddingBottom="2dp"/>
+
+
 
 </android.support.constraint.ConstraintLayout>
