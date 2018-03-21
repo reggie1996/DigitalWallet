@@ -93,15 +93,20 @@ public class TestData {
 
     public static List<Specialist> getSpecialistData(){
         List<Specialist> specialists = new ArrayList<>();
-        Specialist specialist1 = new Specialist("专家1","简介1", 10,"http://120.79.17.123/static/img/crowdfunding2.jpg");
-        Specialist specialist2 = new Specialist("专家1","简介1", 10,"http://120.79.17.123/static/img/crowdfunding2.jpg");
-        Specialist specialist3 = new Specialist("专家1","简介1", 10,"http://120.79.17.123/static/img/crowdfunding2.jpg");
-        Specialist specialist4 = new Specialist("专家1","简介1", 10,"http://120.79.17.123/static/img/crowdfunding2.jpg");
+        Specialist specialist1 = new Specialist("带你一起初探区块链的前世今生","老吴", "和大家一起讨论一下区块链的内容","http://120.79.17.123/static/img/crowdfunding2.jpg");
+        Specialist specialist2 = new Specialist("区块链到底有哪些商业应用","小刘", "将为大家介绍什么是区块链，区块链的特点和前景","http://120.79.17.123/static/img/crowdfunding2.jpg");
+        Specialist specialist3 = new Specialist("加密数字货币入门及前景","大薛", "近期，数字货币的快速上涨引发了大家的兴趣","http://120.79.17.123/static/img/crowdfunding2.jpg");
+        Specialist specialist4 = new Specialist("焦虑的互联网人未来改怎么办","lukehuo", "作为区块链技术的典型代表，比特币是","http://120.79.17.123/static/img/crowdfunding2.jpg");
+        Specialist specialist5 = new Specialist("带你一起初探区块链的前世今生","老吴", "和大家一起讨论一下区块链的内容","http://120.79.17.123/static/img/crowdfunding2.jpg");
+        Specialist specialist6 = new Specialist("区块链到底有哪些商业应用","小刘", "将为大家介绍什么是区块链，区块链的特点和前景","http://120.79.17.123/static/img/crowdfunding2.jpg");
+
 
         specialists.add(specialist1);
         specialists.add(specialist2);
         specialists.add(specialist3);
         specialists.add(specialist4);
+        specialists.add(specialist5);
+        specialists.add(specialist6);
 
         return specialists;
     }

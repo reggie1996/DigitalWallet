@@ -54,9 +54,9 @@ public class SpecialistRecyclerViewAdapter extends RecyclerView.Adapter<Speciali
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         Specialist specialist = Specialists.get(position);
-        holder.tv_name.setText("专家名：" + specialist.getName());
-        holder.tv_describe.setText("简介：" + specialist.getDesc());
-        holder.tv_cost.setText("咨询费用：" + specialist.getCost());
+        holder.tv_name.setText(specialist.getName());
+        holder.tv_describe.setText(specialist.getDesc());
+        holder.tv_cost.setText(specialist.getCost());
         Glide.with(mContext).load(specialist.getImgUrl()).into(holder.iv_img);
         holder.itemView.setTag(position);
     }

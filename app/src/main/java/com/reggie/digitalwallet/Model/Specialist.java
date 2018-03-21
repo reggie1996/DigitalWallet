@@ -10,7 +10,7 @@ import java.net.URL;
 public class Specialist {
     private String name;
     private String desc;
-    private int cost;
+    private String cost;
     private String imgUrl;
 
     public String getName() {
@@ -21,7 +21,7 @@ public class Specialist {
         return desc;
     }
 
-    public int getCost() {
+    public String getCost() {
         return cost;
     }
 
@@ -34,7 +34,7 @@ public class Specialist {
         return null;
     }
 
-    public Specialist(String name, String desc, int cost, String imgUrl) {
+    public Specialist(String name, String desc, String cost, String imgUrl) {
 
         this.name = name;
         this.desc = desc;
