@@ -15,6 +15,7 @@ import android.widget.ImageView;
 
 import com.just.agentweb.IVideo;
 import com.reggie.digitalwallet.Activity.ConversationActivity;
+import com.reggie.digitalwallet.Activity.WriteMomentActivity;
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community1RecyclerViewFragment;
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community2RecyclerViewFragment;
 import com.reggie.digitalwallet.Fragment.ChildFragment.Community3RecyclerViewFragment;
@@ -63,7 +64,7 @@ public class CommunityFragment extends BaseFragment {
         list_title = new ArrayList<>();
         list_title.add("热门");
         list_title.add("关注");
-        list_title.add("专家");
+        list_title.add("达人");
 
         adapter = new FragmentPagerAdapter(getChildFragmentManager()) {
             @Override
@@ -104,7 +105,8 @@ public class CommunityFragment extends BaseFragment {
         iv_community_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               drawer.openDrawer(drawer_friendlist);
+               //drawer.openDrawer(drawer_friendlist);
+                startActivity(new Intent(getContext(), WriteMomentActivity.class));
             }
         });
 

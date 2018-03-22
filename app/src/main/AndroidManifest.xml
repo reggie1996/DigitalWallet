@@ -27,6 +27,7 @@
         <activity android:name=".Activity.QRCodeActivity" />
         <activity android:name=".Test.SFZActivity" />
         <activity android:name=".Activity.WebActivity" />
+        <activity android:name=".Activity.Web2Activity" />
         <activity android:name=".ArcFace.MainActivity" />
         <activity android:name=".ArcFace.DetecterActivity" />
         <activity android:name=".ArcFace.RegisterActivity" />
@@ -44,6 +45,7 @@
         <activity android:name=".Activity.GoodsListActivity" />
         <activity android:name=".Activity.GoodsActivity" />
         <activity android:name=".Activity.OrderGoodsActivity" />
+        <activity android:name=".Activity.WriteMomentActivity" />
         <activity android:name=".Activity.TrendItemsActivity"></activity>
     </application>
 

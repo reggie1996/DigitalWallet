@@ -1,6 +1,7 @@
 package com.reggie.digitalwallet.Fragment.ChildFragment;
 
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -12,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
+import com.reggie.digitalwallet.Activity.Web2Activity;
 import com.reggie.digitalwallet.Model.Specialist;
 import com.reggie.digitalwallet.R;
 
@@ -79,13 +81,17 @@ public class Community3RecyclerViewFragment extends Fragment {
         rv_community_child3.setAdapter(specialistRecyclerViewAdapter);*/
 
         Glide.with(this).load(R.mipmap.article1).into(iv_article1);
+        iv_article1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getContext(), Web2Activity.class));
+            }
+        });
         Glide.with(this).load(R.mipmap.article2).into(iv_article2);
         Glide.with(this).load(R.mipmap.article3).into(iv_article3);
         Glide.with(this).load(R.mipmap.article4).into(iv_article4);
         Glide.with(this).load(R.mipmap.article5).into(iv_article5);
         Glide.with(this).load(R.mipmap.article6).into(iv_article6);
-
-
     }
 
     @Override
@@ -94,11 +100,4 @@ public class Community3RecyclerViewFragment extends Fragment {
         unbinder.unbind();
     }
 
-    @OnClick({R.id.iv_article4, R.id.iv_article5, R.id.iv_article6})
-    public void onClick(View v) {
-        switch (v.getId()) {
-            default:
-                break;
-        }
-    }
 }
