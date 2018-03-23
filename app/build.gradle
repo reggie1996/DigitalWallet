@@ -95,6 +95,9 @@ dependencies {
     //时间选择
     compile 'com.borax12.materialdaterangepicker:library:1.9'
 
+    implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
+
+
 }
 
 apply plugin: 'kotlin-android'

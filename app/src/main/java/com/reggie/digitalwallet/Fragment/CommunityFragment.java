@@ -12,6 +12,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import com.just.agentweb.IVideo;
 import com.reggie.digitalwallet.Activity.ConversationActivity;
@@ -105,8 +106,7 @@ public class CommunityFragment extends BaseFragment {
         iv_community_message.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-               //drawer.openDrawer(drawer_friendlist);
-                startActivity(new Intent(getContext(), WriteMomentActivity.class));
+                startActivityForResult(new Intent(getContext(), WriteMomentActivity.class),1);
             }
         });
 
@@ -120,4 +120,15 @@ public class CommunityFragment extends BaseFragment {
         return view;
     }
 
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        switch (requestCode){
+            case 1:
+                Toast.makeText(getContext(),"dsadasdasdsa",Toast.LENGTH_LONG).show();
+                break;
+            default:
+                break;
+        }
+    }
 }

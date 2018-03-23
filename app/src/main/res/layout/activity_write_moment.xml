@@ -24,9 +24,8 @@
             android:text="取消"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView12"
+            android:id="@+id/tv_back"
             android:textSize="16dp"
-            android:onClick="back"
             android:textAllCaps="false" />
 
         <Space
@@ -53,7 +52,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textSize="16dp"
-            android:id="@+id/press"
+            android:id="@+id/tv_publish"
             android:onClick="press"/>
 
     </LinearLayout>
@@ -98,7 +97,6 @@
             android:layout_marginTop="10dp">
 
             <ImageView
-                android:id="@+id/imageView12"
                 android:layout_width="35dp"
                 android:layout_height="35dp"
                 android:onClick="selectImage"
@@ -106,7 +104,6 @@
                 android:src="@drawable/ic_plus" />
 
             <TextView
-                android:id="@+id/textView22"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
@@ -117,7 +114,6 @@
         <ImageView
             android:layout_width="251dp"
             android:layout_height="116dp"
-            android:id="@+id/image_moment"
             android:layout_weight="0.15"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="40dp"/>
