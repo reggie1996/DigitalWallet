@@ -125,7 +125,7 @@ public class CommunityFragment extends BaseFragment {
         super.onActivityResult(requestCode, resultCode, data);
         switch (requestCode){
             case 1:
-                Toast.makeText(getContext(),"dsadasdasdsa",Toast.LENGTH_LONG).show();
+                //Toast.makeText(getContext(),"dsadasdasdsa",Toast.LENGTH_LONG).show();
                 break;
             default:
                 break;

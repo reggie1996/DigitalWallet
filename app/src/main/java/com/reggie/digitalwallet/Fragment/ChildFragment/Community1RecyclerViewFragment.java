@@ -66,10 +66,10 @@ public class Community1RecyclerViewFragment extends Fragment {
     private void initData() {
 
         bannerImages = new ArrayList<>();
-        bannerImages.add("https://pic4.zhimg.com/v2-24ef7d28e3fa22297016a9b997854a91_r.jpg");
-        bannerImages.add("https://pic4.zhimg.com/043a08fef8da21e474c519985042f3d2_r.jpg");
-        bannerImages.add("https://pic1.zhimg.com/80/v2-0b128c4d100f82e061c913e77f6836d9_hd.jpg");
-        bannerImages.add("https://pic4.zhimg.com/v2-24ef7d28e3fa22297016a9b997854a91_r.jpg");
+        bannerImages.add("http://cdn.8btc.com/wp-content/uploads/2018/03/201803200830409687-380x228.jpg");
+        bannerImages.add("http://cdn.8btc.com/wp-content/uploads/2018/03/201803210410566686-380x228.png");
+        bannerImages.add("http://cdn.8btc.com/wp-content/uploads/2018/03/201803240651452839.png");
+        bannerImages.add("http://cdn.8btc.com/wp-content/uploads/2018/03/201803231022049252.jpg");
 
         communityList = TestData.getCommunityData1();
 

@@ -53,7 +53,7 @@ public class OrderGoodsActivity extends Activity {
                 break;
             case R.id.button:
                 Toast.makeText(this,"下单成功,转向支付界面",Toast.LENGTH_LONG).show();
-                startActivity(new Intent(this,SendActivity.class));
+                startActivity(new Intent(this,Send2Activity.class));
                 break;
         }
     }

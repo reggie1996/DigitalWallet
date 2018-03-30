@@ -14,10 +14,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
+import com.reggie.digitalwallet.Activity.GXSExplorerActivity;
 import com.reggie.digitalwallet.Activity.ReciveActivity;
 import com.reggie.digitalwallet.Activity.SendActivity;
-import com.reggie.digitalwallet.KChart.ExampleActivity;
 import com.reggie.digitalwallet.KChart.LoadMoreActivity;
 import com.reggie.digitalwallet.Model.Wallet;
 import com.reggie.digitalwallet.R;
@@ -27,10 +28,11 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import butterknife.Unbinder;
-import de.hdodenhof.circleimageview.CircleImageView;
 import de.mrapp.android.tabswitcher.Tab;
 import de.mrapp.android.tabswitcher.TabSwitcher;
 import de.mrapp.android.tabswitcher.TabSwitcherDecorator;
+
+import static java.lang.Thread.sleep;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -43,6 +45,8 @@ public class WalletFragment extends BaseFragment {
     ImageView import_wallet;
     @BindView(R.id.new_wallet)
     ImageView new_wallet;
+    @BindView(R.id.search)
+    ImageView search;
     private TabSwitcher tabSwitcher;
 
     private static final String VIEW_TYPE_EXTRA = WalletFragment.class.getName() + "::ViewType";
@@ -72,7 +76,81 @@ public class WalletFragment extends BaseFragment {
         return view;
     }
 
-    @OnClick({R.id.bt_show_wallet_list, R.id.import_wallet, R.id.new_wallet})
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        import_wallet.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+                //Toast.makeText(getContext(),"adsad",Toast.LENGTH_LONG).show();
+                final MaterialDialog materialDialog = new MaterialDialog.Builder(getContext())
+                        .title("正在获取数据")
+                        .content("请稍等...")
+                        .progress(true, 0)
+                        .show();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(3000);
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    materialDialog.dismiss();
+                                    new MaterialDialog.Builder(getContext())
+                                            .title("返回消息")
+                                            .content("钱包导入成功！")
+                                            .positiveText("确认")
+                                            .show();
+                                }
+                            });
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
+                return true;
+            }
+        });
+        new_wallet.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View view) {
+
+                final MaterialDialog materialDialog = new MaterialDialog.Builder(getContext())
+                        .title("正在获取数据")
+                        .content("请稍等...")
+                        .progress(true, 0)
+                        .show();
+                new Thread(new Runnable() {
+                    @Override
+                    public void run() {
+                        try {
+                            sleep(3000);
+                            getActivity().runOnUiThread(new Runnable() {
+                                @Override
+                                public void run() {
+                                    materialDialog.dismiss();
+                                    new MaterialDialog.Builder(getContext())
+                                            .title("返回消息")
+                                            .content("创建成功！")
+                                            .positiveText("确认")
+                                            .show();
+                                }
+                            });
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }).start();
+
+
+                return true;
+            }
+        });
+    }
+
+    @OnClick({R.id.bt_show_wallet_list, R.id.import_wallet, R.id.new_wallet, R.id.search})
     public void onClick(View v) {
         switch (v.getId()) {
             default:
@@ -85,6 +163,9 @@ public class WalletFragment extends BaseFragment {
                 break;
             case R.id.new_wallet:
                 WalletUtils.generateWallet(mContext);
+                break;
+            case R.id.search:
+                startActivity(new Intent(getContext(), GXSExplorerActivity.class));
                 break;
         }
     }
@@ -128,7 +209,7 @@ public class WalletFragment extends BaseFragment {
                 @Override
                 public void onClick(View view) {
                     Intent intent = new Intent();
-                    intent.setClass(getContext(),LoadMoreActivity.class);
+                    intent.setClass(getContext(), LoadMoreActivity.class);
                     startActivity(intent);
                 }
             });
@@ -158,18 +239,18 @@ public class WalletFragment extends BaseFragment {
         CharSequence title = getString(R.string.tab_title, index + 1);
         Tab tab = new Tab(title);
         Wallet wallet = null;
-        switch (index){
+        switch (index) {
             case 0:
-                wallet  = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 1000, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 99.47, "备份私钥");
                 break;
             case 1:
-                wallet  = new Wallet("https://block.gxb.io/api/header/superman111", "superman111", 0, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/superman111", "superman111", 0, "备份私钥");
                 break;
             case 2:
-                wallet  = new Wallet("https://block.gxb.io/api/header/flash111", "flash111", 0, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/flash111", "flash111", 0, "备份私钥");
                 break;
             default:
-                wallet  = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 1000, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 99.47, "备份私钥");
                 break;
         }
         //用bundle传参数
@@ -179,7 +260,6 @@ public class WalletFragment extends BaseFragment {
         tab.setParameters(parameters);
         return tab;
     }
-
 
 
 }

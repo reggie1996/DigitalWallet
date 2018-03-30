@@ -44,7 +44,7 @@ public class WebActivity extends Activity {
         Intent intent = getIntent();
         webUrl = intent.getStringExtra("webUrl");
 
-        webUrl = "https://www.jianshu.com/p/b2e39039cd4e";
+        //webUrl = "https://www.jianshu.com/p/b2e39039cd4e";
 
         //状态栏修改
         ImmersionBar.with(this)

@@ -27,7 +27,7 @@ import butterknife.OnClick;
 
 import static java.lang.Thread.sleep;
 
-public class SendActivity extends Activity {
+public class Send2Activity extends Activity {
 
     private static final int REQUSTCODE_SCAN_QRCODE = 1;
 
@@ -55,6 +55,8 @@ public class SendActivity extends Activity {
     String amount;
 
     Context mContext;
+    @BindView(R.id.et_extra)
+    EditText mEtExtra;
 
 
     @Override
@@ -63,8 +65,13 @@ public class SendActivity extends Activity {
         setContentView(R.layout.activity_send);
         ButterKnife.bind(this);
         mImmersionBar.with(this).transparentBar().statusBarDarkFont(true).init();
-
         mContext = this;
+
+        et_send_to.setText("superman111");
+        et_amount.setText("5.81");
+        mEtExtra.setText("spbh:00001zys:j3");
+        String url = "http://block.gxb.io/api/header/" + "superman111";
+        Glide.with(this).load(url).into(iv_send_to);
 
         initSendFrom();
         initSendTo();
@@ -175,7 +182,7 @@ public class SendActivity extends Activity {
 
     private void send() {
         //Toast.makeText(this, "发送", Toast.LENGTH_LONG).show();
-        final MaterialDialog materialDialog =  new MaterialDialog.Builder(mContext)
+        final MaterialDialog materialDialog = new MaterialDialog.Builder(mContext)
                 .title("正在获取数据")
                 .content("请稍等...")
                 .progress(true, 0)

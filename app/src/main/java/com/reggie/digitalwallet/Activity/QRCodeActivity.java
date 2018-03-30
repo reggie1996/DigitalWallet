@@ -8,6 +8,7 @@ import android.support.design.widget.Snackbar;
 import android.widget.Toast;
 
 import com.dlazaro66.qrcodereaderview.QRCodeReaderView;
+import com.gyf.barlibrary.ImmersionBar;
 import com.reggie.digitalwallet.R;
 
 import butterknife.BindView;
@@ -23,11 +24,16 @@ public class QRCodeActivity extends Activity implements QRCodeReaderView.OnQRCod
     @BindView(R.id.qrdecoderview)
     QRCodeReaderView qrCodeReaderView;
 
+    protected ImmersionBar mImmersionBar;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_qrcode);
         ButterKnife.bind(this);
+
+        mImmersionBar = ImmersionBar.with(this);
+        mImmersionBar.barColor(R.color.colorGold1).statusBarDarkFont(false).init();
 
         qrCodeReaderView = (QRCodeReaderView) findViewById(R.id.qrdecoderview);
         qrCodeReaderView.setOnQRCodeReadListener(this);
@@ -70,5 +76,11 @@ public class QRCodeActivity extends Activity implements QRCodeReaderView.OnQRCod
         qrCodeReaderView.stopCamera();
     }
 
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        if (mImmersionBar != null)
+            mImmersionBar.destroy();
+    }
 
 }

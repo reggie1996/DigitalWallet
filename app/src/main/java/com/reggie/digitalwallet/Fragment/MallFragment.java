@@ -67,7 +67,7 @@ public class MallFragment extends BaseFragment {
         Glide.with(this).load(R.mipmap.mall2).into(iv_mall2);
         Glide.with(this).load(R.mipmap.mall3).into(iv_mall3);
         Glide.with(this).load(R.mipmap.store1).into(iv_store1);
-        Glide.with(this).load(R.mipmap.store2).into(iv_store2);
+        Glide.with(this).load(R.mipmap.store7).into(iv_store2);
        /* Glide.with(this).load(R.mipmap.store3).into(iv_store3);
         Glide.with(this).load(R.mipmap.store4).into(iv_store4);
         Glide.with(this).load(R.mipmap.store5).into(iv_store5);*/

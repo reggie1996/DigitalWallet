@@ -34,6 +34,7 @@
         <activity android:name=".ArcFace.PermissionAcitivity" />
         <activity android:name=".Test.PagerActivity" />
         <activity android:name=".Activity.SendActivity" />
+        <activity android:name=".Activity.Send2Activity" />
         <activity android:name=".Activity.ReciveActivity" />
         <activity
             android:name=".KChart.LoadMoreActivity"
@@ -45,8 +46,9 @@
         <activity android:name=".Activity.GoodsListActivity" />
         <activity android:name=".Activity.GoodsActivity" />
         <activity android:name=".Activity.OrderGoodsActivity" />
-        <activity android:name=".Activity.WriteMomentActivity"/>
-        <activity android:name=".Activity.TrendItemsActivity"></activity>
+        <activity android:name=".Activity.WriteMomentActivity" />
+        <activity android:name=".Activity.TrendItemsActivity" />
+        <activity android:name=".Activity.GXSExplorerActivity"></activity>
     </application>
 
 </manifest>

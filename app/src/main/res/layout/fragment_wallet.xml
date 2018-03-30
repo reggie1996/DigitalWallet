@@ -44,6 +44,13 @@
                 android:layout_gravity="right|center">
 
                 <ImageView
+                    android:id="@+id/search"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:background="@drawable/ic_import_wallet"
+                    android:layout_marginRight="10dp"/>
+
+                <ImageView
                     android:id="@+id/import_wallet"
                     android:layout_width="20dp"
                     android:layout_height="20dp"

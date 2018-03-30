@@ -52,8 +52,6 @@ public class MainActivity extends FragmentActivity {
     LinearLayout ll_menu_message_center;
     @BindView(R.id.ll_menu_contacts)
     LinearLayout ll_menu_contacts;
-    @BindView(R.id.ll_menu_customer_service)
-    LinearLayout ll_menu_customer_service;
     @BindView(R.id.ll_menu_help)
     LinearLayout ll_menu_help;
     @BindView(R.id.ll_menu_account_manage)
@@ -124,7 +122,7 @@ public class MainActivity extends FragmentActivity {
         radioGroup.check(R.id.rb_wallet);
     }
 
-    @OnClick({R.id.iv_qrcode, R.id.ll_menu_import_wallet, R.id.ll_menu_create_wallet, R.id.ll_menu_wallet_manage, R.id.ll_menu_personal_fortune, R.id.ll_menu_message_center, R.id.ll_menu_contacts, R.id.ll_menu_customer_service, R.id.ll_menu_help, R.id.ll_menu_account_manage, R.id.ll_menu_system_manage, R.id.ll_menu_exit, R.id.navigation_view})
+    @OnClick({R.id.iv_qrcode, R.id.ll_menu_import_wallet, R.id.ll_menu_create_wallet, R.id.ll_menu_wallet_manage, R.id.ll_menu_personal_fortune, R.id.ll_menu_message_center, R.id.ll_menu_contacts, R.id.ll_menu_help, R.id.ll_menu_account_manage, R.id.ll_menu_system_manage, R.id.ll_menu_exit, R.id.navigation_view})
     public void onClick(View v) {
         switch (v.getId()) {
             default:
@@ -147,8 +145,6 @@ public class MainActivity extends FragmentActivity {
             case R.id.ll_menu_message_center:
                 break;
             case R.id.ll_menu_contacts:
-                break;
-            case R.id.ll_menu_customer_service:
                 break;
             case R.id.ll_menu_help:
                 break;

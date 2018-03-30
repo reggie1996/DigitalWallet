@@ -71,8 +71,8 @@ public class TrendFragment extends BaseFragment {
 
         fragments = new ArrayList<>();
         fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
-        fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
-        fragments.add(NewsRecyclerViewFragment.newInstance(newslist1));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist2));
+        fragments.add(NewsRecyclerViewFragment.newInstance(newslist3));
         fragments.add(NewsRecyclerViewFragment.newInstance(newslist4));
 
 

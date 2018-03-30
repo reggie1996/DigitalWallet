@@ -94,8 +94,10 @@ dependencies {
 
     //时间选择
     compile 'com.borax12.materialdaterangepicker:library:1.9'
-
     implementation 'cn.bingoogolapple:bga-refreshlayout:1.1.8@aar'
+    compile 'com.github.ybq:Android-SpinKit:1.1.0'
+
+    compile 'com.miguelcatalan:materialsearchview:1.4.0'
 
 
 }

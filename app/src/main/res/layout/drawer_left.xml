@@ -45,7 +45,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Nakamoto"
+                    android:text="老吴"
                     android:textColor="@color/colorGold1"
                     android:textSize="20dp"
                     android:layout_gravity="center"/>
@@ -164,16 +164,6 @@
                         style="@style/draw_menu_text_style" />
                 </LinearLayout>
 
-                <LinearLayout
-                    android:id="@+id/ll_menu_customer_service"
-                    style="@style/draw_menu_item_style">
-                    <ImageView
-                        style="@style/draw_menu_icon_style"
-                        android:src="@mipmap/ic_community" />
-                    <TextView
-                        android:text="智能客服"
-                        style="@style/draw_menu_text_style" />
-                </LinearLayout>
 
 
                 <LinearLayout
