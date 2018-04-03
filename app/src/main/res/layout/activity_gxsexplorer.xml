@@ -61,6 +61,7 @@
                 android:background="@color/colorGold2">
 
                 <EditText
+                    android:id="@+id/et_info"
                     android:layout_width="match_parent"
                     android:layout_height="30dp"
                     android:layout_gravity="center_vertical"
@@ -71,6 +72,7 @@
                     android:textSize="15dp"
                     android:paddingLeft="10dp"/>
                 <ImageView
+                    android:id="@+id/iv_search"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="5dp"
@@ -79,6 +81,58 @@
 
             </FrameLayout>
 
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/iv_logo"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:alpha="0.2"
+                    android:src="@mipmap/icon"
+                    android:layout_gravity="center"/>
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    style="?android:attr/progressBarStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:visibility="gone"/>
+
+
+                <LinearLayout
+                    android:id="@+id/ll_chain_info"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:layout_marginRight="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:visibility="gone">
+
+                    <include layout="@layout/item_block_info"/>
+                    <include layout="@layout/item_gxchain_info"/>
+                    <include layout="@layout/item_gxchain_info2"/>
+                    <include layout="@layout/item_gxchain_info3"/>
+                    <include layout="@layout/item_gxchain_info4"/>
+                    <include layout="@layout/item_gxchain_info5"/>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="没有更多"
+                        android:gravity="center"/>
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"/>
+
+                </LinearLayout>
+
+            </FrameLayout>
         </LinearLayout>
 
     </android.support.v4.widget.NestedScrollView>

@@ -97,7 +97,7 @@
                         android:gravity="center"
                         android:textColor="@color/white"
                         android:id="@+id/tv_wallet_pk"
-                        android:text="0xgfudsgifguyasdgfdsafdsafasd..."
+                        android:text="私钥备份  |  助记词备份"
                         android:layout_marginBottom="20dp"/>
 
 

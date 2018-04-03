@@ -16,6 +16,8 @@ import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bumptech.glide.Glide;
+import com.reggie.digitalwallet.Activity.Backup1Activity;
+import com.reggie.digitalwallet.Activity.Backup2Activity;
 import com.reggie.digitalwallet.Activity.GXSExplorerActivity;
 import com.reggie.digitalwallet.Activity.ReciveActivity;
 import com.reggie.digitalwallet.Activity.SendActivity;
@@ -204,6 +206,23 @@ public class WalletFragment extends BaseFragment {
             balance.setText(wallet.getBalance() + "");
             pk.setText(wallet.getPk());
 
+            pk.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //私钥备份
+                    startActivity(new Intent(getContext(), Backup1Activity.class));
+                }
+            });
+
+            pk.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    //助记词备份
+                    startActivity(new Intent(getContext(), Backup2Activity.class));
+                    return true;
+                }
+            });
+
             ImageView trend = findViewById(R.id.iv_trend);
             trend.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -241,16 +260,16 @@ public class WalletFragment extends BaseFragment {
         Wallet wallet = null;
         switch (index) {
             case 0:
-                wallet = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 99.47, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 99.47, "私钥备份  |  助记词备份");
                 break;
             case 1:
-                wallet = new Wallet("https://block.gxb.io/api/header/superman111", "superman111", 0, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/superman111", "superman111", 0, "私钥备份  |  助记词备份");
                 break;
             case 2:
-                wallet = new Wallet("https://block.gxb.io/api/header/flash111", "flash111", 0, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/flash111", "flash111", 0, "私钥备份  |  助记词备份");
                 break;
             default:
-                wallet = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 99.47, "备份私钥");
+                wallet = new Wallet("https://block.gxb.io/api/header/batman111", "batman111", 99.47, "私钥备份  |  助记词备份");
                 break;
         }
         //用bundle传参数

@@ -48,7 +48,9 @@
         <activity android:name=".Activity.OrderGoodsActivity" />
         <activity android:name=".Activity.WriteMomentActivity" />
         <activity android:name=".Activity.TrendItemsActivity" />
-        <activity android:name=".Activity.GXSExplorerActivity"></activity>
+        <activity android:name=".Activity.GXSExplorerActivity" />
+        <activity android:name=".Activity.Backup1Activity" />
+        <activity android:name=".Activity.Backup2Activity"></activity>
     </application>
 
 </manifest>
