@@ -51,7 +51,8 @@
         <activity android:name=".Activity.GXSExplorerActivity" />
         <activity android:name=".Activity.Backup1Activity" />
         <activity android:name=".Activity.Backup2Activity" />
-        <activity android:name=".Activity.BackupNextActivity"></activity>
+        <activity android:name=".Activity.BackupNextActivity" />
+        <activity android:name=".Activity.QualsActivity"></activity>
     </application>
 
 </manifest>

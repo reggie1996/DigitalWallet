@@ -67,7 +67,7 @@ public class Backup2Activity extends Activity {
         ImmersionBar.with(this).destroy();
     }
 
-    @OnClick({R.id.back, R.id.bt_next, R.id.tv_words, R.id.progressBar})
+    @OnClick({R.id.back, R.id.bt_next})
     public void onClick(View v) {
         switch (v.getId()) {
             default:
@@ -77,10 +77,6 @@ public class Backup2Activity extends Activity {
                 break;
             case R.id.bt_next:
                 startActivity(new Intent(this, BackupNextActivity.class));
-                break;
-            case R.id.tv_words:
-                break;
-            case R.id.progressBar:
                 break;
         }
     }

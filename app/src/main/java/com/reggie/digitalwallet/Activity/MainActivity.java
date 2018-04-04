@@ -1,6 +1,7 @@
 package com.reggie.digitalwallet.Activity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -147,6 +148,7 @@ public class MainActivity extends FragmentActivity {
             case R.id.ll_menu_contacts:
                 break;
             case R.id.ll_menu_help:
+                startActivity(new Intent(this,QualsActivity.class));
                 break;
             case R.id.ll_menu_account_manage:
                 break;
