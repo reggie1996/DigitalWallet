@@ -6,13 +6,14 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView35"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:text="第三题"
+        android:text="第五题"
         android:textColor="@color/colorGold1"
         android:textSize="20dp" />
 
@@ -23,33 +24,44 @@
         android:layout_above="@+id/radioGroup"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="31dp"
         android:padding="30dp"
-        android:text="公信宝资产需要挖矿吗？"
+        android:text="当用户丢失代币的本质其实是丢失了自己的私钥，那么如果用户只知道自己的钱包地址，怎样找回自己丢失的钱包？"
         android:textColor="@color/colorGold1"
         android:textSize="20dp" />
 
-
     <RadioGroup
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/radioGroup"
-        android:layout_marginLeft="80dp"
-        android:layout_centerVertical="true">
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="175dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A.  是"
-            android:textColor="#707070"/>
+            android:text="A.  第一时间联系工作人员，将钱包地址告知，让其帮忙找回"
+            android:textColor="#707070" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B.  否"
-            android:textColor="#707070"/>
+            android:text="B.  无法找回"
+            android:textColor="#707070" />
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C.  使用区块链浏览器找回"
+            android:textColor="#707070" />
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D.  还需要知道自己的钱包密码"
+            android:textColor="#707070" />
 
     </RadioGroup>
 

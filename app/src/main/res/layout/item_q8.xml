@@ -12,9 +12,10 @@
         android:layout_above="@+id/textView35"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:text="第三题"
+        android:text="第六题"
         android:textColor="@color/colorGold1"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:id="@+id/textView36" />
 
     <TextView
         android:id="@+id/textView35"
@@ -23,34 +24,46 @@
         android:layout_above="@+id/radioGroup"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="31dp"
         android:padding="30dp"
-        android:text="公信宝资产需要挖矿吗？"
+        android:text="拥有以下那几个可以恢复钱包？"
         android:textColor="@color/colorGold1"
         android:textSize="20dp" />
 
 
-    <RadioGroup
+    <LinearLayout
+        android:id="@+id/radioGroup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/radioGroup"
-        android:layout_marginLeft="80dp"
-        android:layout_centerVertical="true">
+        android:layout_centerVertical="true"
+        android:layout_toStartOf="@+id/textView36"
+        android:orientation="vertical">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A.  是"
-            android:textColor="#707070"/>
+            android:text="A.  钱包公钥"
+            android:textColor="#707070" />
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B.  否"
-            android:textColor="#707070"/>
+            android:text="B.  钱包私钥"
+            android:textColor="#707070" />
 
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C.  助记词"
+            android:textColor="#707070" />
 
-    </RadioGroup>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D.  钱包名"
+            android:textColor="#707070" />
+
+    </LinearLayout>
 
 </RelativeLayout>

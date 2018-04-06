@@ -12,7 +12,7 @@
         android:layout_above="@+id/textView35"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:text="第三题"
+        android:text="第八题"
         android:textColor="@color/colorGold1"
         android:textSize="20dp" />
 
@@ -23,33 +23,50 @@
         android:layout_above="@+id/radioGroup"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:layout_marginBottom="31dp"
         android:padding="30dp"
-        android:text="公信宝资产需要挖矿吗？"
+        android:text="区块链代币不是存储在app的服务器上，所以当用户发现自己的代币被盗，下面做法正确的是？"
         android:textColor="@color/colorGold1"
         android:textSize="20dp" />
 
 
     <RadioGroup
-        android:layout_width="wrap_content"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:id="@+id/radioGroup"
-        android:layout_marginLeft="80dp"
-        android:layout_centerVertical="true">
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="175dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A.  是"
+            android:text="A.  将私钥发给钱包官方工作人员，令其帮助操作，找回被盗代币"
             android:textColor="#707070"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B.  否"
-            android:textColor="#707070"/>
+            android:text="B.  第一时间告知工作人员，请求冻结黑客账户地址，并报警"
+            android:textColor="#707070"
+            android:layout_marginTop="10dp"/>
 
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C.  第一时间告知工作人员，请求冻结黑客账户，并将交易回滚"
+            android:textColor="#707070"
+            android:layout_marginTop="10dp"/>
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D.  立即停止向该钱包交易，并将剩余的代币转移到新钱包中"
+            android:textColor="#707070"
+            android:layout_marginTop="10dp"/>
 
     </RadioGroup>
 

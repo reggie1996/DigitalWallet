@@ -146,6 +146,7 @@ public class MainActivity extends FragmentActivity {
             case R.id.ll_menu_message_center:
                 break;
             case R.id.ll_menu_contacts:
+                startActivity(new Intent(this,BlockChainWikiActivity.class));
                 break;
             case R.id.ll_menu_help:
                 startActivity(new Intent(this,QualsActivity.class));

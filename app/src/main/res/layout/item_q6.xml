@@ -12,9 +12,10 @@
         android:layout_above="@+id/textView35"
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
-        android:text="第一题"
+        android:text="第七题"
         android:textColor="@color/colorGold1"
-        android:textSize="20dp" />
+        android:textSize="20dp"
+        android:id="@+id/textView37" />
 
     <TextView
         android:id="@+id/textView35"
@@ -24,43 +25,49 @@
         android:layout_centerHorizontal="true"
         android:layout_gravity="center_horizontal"
         android:padding="30dp"
-        android:text="公信宝公信链采用的共识机制是？"
+        android:text="当用户发现自己转错了地址，一下做法正确的是？"
         android:textColor="@color/colorGold1"
         android:textSize="20dp" />
 
 
     <RadioGroup
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         android:id="@+id/radioGroup"
+        android:layout_width="350dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true">
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="195dp">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A.  Proof of Work - PoW"
-            android:textColor="#707070"/>
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="B.  Proof of Stake - PoS"
-            android:textColor="#707070"/>
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C.  Practical Byzantine Fault Tolerance - PBFT"
+            android:text="A.  由于区块链具有去中心化、不可逆的特性，所以没有办法取消该交易"
             android:textColor="#707070" />
 
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="B.  联系官方工作人员，请求将一发送成功的交易回滚"
+            android:textColor="#707070"
+            android:layout_marginTop="10dp"/>
+
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="D.  Delegated Proof of Stake - DPoS"
-            android:textColor="#707070" />
+            android:text="C.  第一时间联系官方工作人员，请求查明粗无的转账地址，并联系对方"
+            android:textColor="#707070"
+            android:layout_marginTop="10dp" />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="C.  第一时间联系官方工作人员，请求取消该交易"
+            android:textColor="#707070"
+            android:layout_marginTop="10dp"/>
 
     </RadioGroup>
 

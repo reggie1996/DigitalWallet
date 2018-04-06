@@ -1,39 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/textView35"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:text="第二题"
+        android:textColor="@color/colorGold1"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView35"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/radioGroup"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:padding="30dp"
+        android:text="公信宝公信链产块的间隔是几秒？"
+        android:textColor="@color/colorGold1"
+        android:textSize="20dp" />
+
+
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        >
+        android:id="@+id/radioGroup"
+        android:layout_marginLeft="40dp"
+        android:layout_centerVertical="true">
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="A.dffsdfsdfsdf"/>
+            android:text="A.  1秒"
+            android:textColor="#707070"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="B.fsdfsdfsdfsf"/>
-
-
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="C.fsdfsdfdsffs" />
+            android:text="B.  2秒"
+            android:textColor="#707070"/>
 
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="D.dsfsdfknkjds" />
+            android:text="C.  3秒"
+            android:textColor="#707070" />
+
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="D.  4秒"
+            android:textColor="#707070" />
 
     </RadioGroup>
 
-</FrameLayout>
+</RelativeLayout>

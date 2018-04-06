@@ -149,7 +149,7 @@
                         style="@style/draw_menu_icon_style"
                         android:src="@mipmap/ic_community" />
                     <TextView
-                        android:text="消息中心"
+                        android:text="联系人"
                         style="@style/draw_menu_text_style" />
                 </LinearLayout>
 
@@ -160,7 +160,7 @@
                         style="@style/draw_menu_icon_style"
                         android:src="@mipmap/ic_community" />
                     <TextView
-                        android:text="联系人"
+                        android:text="钱包入门"
                         style="@style/draw_menu_text_style" />
                 </LinearLayout>
 
@@ -173,7 +173,7 @@
                         style="@style/draw_menu_icon_style"
                         android:src="@mipmap/ic_community" />
                     <TextView
-                        android:text="帮助"
+                        android:text="资格测试"
                         style="@style/draw_menu_text_style" />
                 </LinearLayout>
 
